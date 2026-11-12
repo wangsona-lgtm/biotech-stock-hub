@@ -30,24 +30,31 @@
       "description": "微創手術醫材、數位生物條碼 IVD 檢測與跨界科技巨頭入股之醫療 AI"
     },
     {
+      "id": "esb_biotech",
+      "label": "台·興櫃潛力新藥與檢測",
+      "en_label": "TW Emerging Biotech (ESB)",
+      "order": 5,
+      "description": "興櫃掛牌之生技新藥、幹細胞與分子檢測黑馬，具備集團投資或美日臨床授權／MOU"
+    },
+    {
       "id": "holding_vc",
       "label": "台·生技金主母艦",
       "en_label": "TW Biotech Holdings",
-      "order": 5,
+      "order": 6,
       "description": "孵化並轉投資多家上市櫃生技子公司之母集團、生技控股與永續型創投"
     },
     {
       "id": "us_biotech",
       "label": "美·生技指數與大廠",
       "en_label": "US Biotech & Partners",
-      "order": 6,
+      "order": 7,
       "description": "那斯達克生技指數 (^NBI)、美國製藥巨頭與台廠眼科授權夥伴"
     },
     {
       "id": "jp_pharma",
       "label": "日·藥廠與生技指標",
       "en_label": "JP Pharma Leaders",
-      "order": 7,
+      "order": 8,
       "description": "日本 ADC 領航藥廠、跨國製藥龍頭與抗體研發標竿企業"
     }
   ],
@@ -1587,7 +1594,14 @@
             "note": "尹衍樑潤泰體系共同發起成立之生技創投平台"
           }
         ],
-        "investees": []
+        "investees": [
+          {
+            "name": "欣耀生醫 (興櫃)",
+            "ticker": "6634",
+            "pct": 9.39,
+            "note": "持股約9.39%任法人董事，扶植脂肪肝炎 MASH 與無肝毒止痛新藥推進國際臨床"
+          }
+        ]
       },
       "intl_coop": {
         "has_us": true,
@@ -1915,6 +1929,464 @@
         "items": [
           { "name": "自研創新抗體 (Hemlibra/Actemra 等)", "pct": 65, "desc": "對羅氏集團供貨與全球銷售權利金收入" },
           { "name": "日本國內腫瘤與專科處方藥", "pct": 35, "desc": "羅氏引進新藥與自研藥於日本市場銷售" }
+        ]
+      }
+    },
+    {
+      "id": "6696",
+      "yahoo_symbol": "6696.TWO",
+      "name": "仁新*",
+      "en_name": "Lin BioScience",
+      "market": "TW",
+      "exchange": "ESB",
+      "currency": "TWD",
+      "segment": "esb_biotech",
+      "tagline": "興櫃生技人氣王！持有美股 Belite Bio (BLTE) 逾42%，獲美 FDA 優先審查與日本 Sakigake 認證",
+      "featured": true,
+      "news_query": "\"仁新\" (6696 OR Belite OR FDA OR 日本 OR NDA) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": true,
+        "summary": "上市櫃及創投法人參股並母以子貴：林雨新董事長體系 Lin Scientific 持股約 9.57%，前十大股東含威剛科技 (3260)、福邦創投；仁新更直接控股美國那斯達克上市子公司 Belite Bio (BLTE) 約 42.37%。",
+        "investors": [
+          {
+            "name": "Lin Scientific Inc. / 威剛 (3260) / 福邦創投",
+            "ticker": "3260 / 創辦法人",
+            "listed_status": "興櫃・上櫃法人與創辦團隊",
+            "pct": 9.57,
+            "pct_label": "Lin Scientific 9.57% (另含威剛/福邦等法人)",
+            "role": "核心經營與策略法人股東",
+            "note": "千張大戶持股約 50%，法人與大股東籌碼集中度高"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "美日雙線重大法規突破：LBS-008 獲美國 FDA 優先審查（Priority Review），並獲日本厚生勞動省先驅藥品認定（Sakigake）遞交日本 NDA。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "Belite Bio, Inc. (NASDAQ: BLTE) / 美國 FDA",
+            "coop_type": "美股子公司自營推進 + FDA Priority Review",
+            "status": "NDA 優先審查中",
+            "detail": "持有美股上市子公司 Belite Bio 約 42.37%，主攻斯特格病變口服新藥 LBS-008 獲美國 FDA 優先審查資格。"
+          },
+          {
+            "country": "JP",
+            "partner": "日本 MHLW 先驅藥品認證 (Sakigake)",
+            "coop_type": "日本 NDA 送件 + 孤兒藥審查",
+            "status": "日本取證推進中",
+            "detail": "LBS-008 獲得日本先驅藥品審查認定（Sakigake Designation），同步向日本厚生勞動省提交新藥查驗登記申請。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "新藥臨床推進期（控股美股 BLTE）",
+        "note": "以美國與日本眼科／乾性黃斑部病變新藥商業化為核心價值來源",
+        "items": [
+          { "name": "LBS-008 眼科創新口服藥 (美/日取證)", "pct": null, "tag": "臨床關鍵引擎", "desc": "透過持股 42.37% 之美國 NASDAQ 子公司 Belite Bio 推進商業化" }
+        ]
+      }
+    },
+    {
+      "id": "7729",
+      "yahoo_symbol": "7729.TWO",
+      "name": "仲恩生醫",
+      "en_name": "Steminent Biotherapeutics",
+      "market": "TW",
+      "exchange": "ESB",
+      "currency": "TWD",
+      "segment": "esb_biotech",
+      "tagline": "上櫃友華生技入股 8.63%，與日本 Kohjin Bio 簽署細胞培養基合作 MOU 之興櫃幹細胞代表",
+      "featured": false,
+      "news_query": "\"仲恩生醫\" (7729 OR 友華 OR 日本 OR MOU OR 幹細胞) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "上櫃藥廠金主：上櫃公司友華生技 (4120) 持股約 8.63% 擔任法人董事，整合跨國藥證申請與亞太市場商業資源。",
+        "investors": [
+          {
+            "name": "友華生技醫藥",
+            "ticker": "4120",
+            "listed_status": "上櫃公司轉投資",
+            "pct": 8.63,
+            "pct_label": "約 8.63% (法人董事)",
+            "role": "核心生技法人金主",
+            "note": "與吉帝藥品(1.97%)、昌祥投資(1.73%)共同參與仲恩生醫幹細胞療法推進"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": false,
+        "has_jp": true,
+        "has_mou": true,
+        "summary": "深耕日本再生醫療市場：與日本無血清培養基領導大廠 Kohjin Bio 簽署合作備忘錄 (MOU)，並積極推動台日幹細胞新藥雙軌取證。",
+        "partners": [
+          {
+            "country": "JP",
+            "partner": "日本 Kohjin Bio / 日本再生醫療法規通路",
+            "coop_type": "技術開發 MOU + 日本雙軌取證",
+            "status": "簽署 MOU 執行中",
+            "detail": "與日本 Kohjin Bio 簽署細胞培養基開發合作 MOU，強化小腦萎縮症等異體間質幹細胞新藥製程規格與日本商業授權。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "再生醫療新藥與細胞製程",
+        "note": "聚焦脊髓小腦萎縮症 Stemchymal 台灣／日本取證及國際細胞治療授權",
+        "items": [
+          { "name": "Stemchymal 異體間質幹細胞療法", "pct": null, "tag": "台日藥證推進中", "desc": "結合友華集團與日本夥伴加速再生醫療法新制落地" }
+        ]
+      }
+    },
+    {
+      "id": "7754",
+      "yahoo_symbol": "7754.TWO",
+      "name": "安基生技",
+      "en_name": "AnnJi Pharmaceutical",
+      "market": "TW",
+      "exchange": "ESB",
+      "currency": "TWD",
+      "segment": "esb_biotech",
+      "tagline": "友華與台杉水牛二號共同投資之興櫃新藥廠，罕病 AJ201 推進美國 FDA 三期臨床",
+      "featured": false,
+      "news_query": "\"安基生技\" (7754 OR 友華 OR AJ201 OR 美國 OR FDA) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "國家隊＋上櫃藥廠聯手支持：台杉水牛二號生技創投為第一大法人股東，上櫃公司友華生技 (4120) 為第二大法人股東。",
+        "investors": [
+          {
+            "name": "友華生技醫藥",
+            "ticker": "4120",
+            "listed_status": "上櫃公司轉投資",
+            "pct": null,
+            "pct_label": "第二大法人股東",
+            "role": "策略藥廠股東",
+            "note": "結合友華臨床與商化經驗助力新藥出海"
+          },
+          {
+            "name": "台杉水牛二號生技創投",
+            "ticker": "國家級生技創投",
+            "listed_status": "政策與機構創投",
+            "pct": null,
+            "pct_label": "第一大法人股東",
+            "role": "領投法人金主",
+            "note": "與友華及核心經營團隊共同主導，千張大戶持股約 55%"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": false,
+        "has_mou": false,
+        "summary": "核心 First-in-Class 新藥 AJ201 正式於美國啟動第三期臨床試驗，曾與美商 Avenue Therapeutics 授權合作並於取回全球主導權後加速國際洽談。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "美國 FDA 三期臨床 (原授權 Avenue Therapeutics)",
+            "coop_type": "美國 FDA 三期臨床 + 國際授權洽談",
+            "status": "美國三期進行中",
+            "detail": "治療甘迺迪氏症 (SBMA) 之 AJ201 獲美國 FDA 孤兒藥及快速審查認定並展開三期臨床；2025 年收回原美國夥伴全球權益，強化與歐美日大型藥廠授權談判籌碼。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "First-in-Class 小分子新藥研發",
+        "note": "主打神經退化與皮膚／發炎性疾病創新機制小分子",
+        "items": [
+          { "name": "AJ201 甘迺迪氏症罕病新藥", "pct": null, "tag": "美國三期臨床", "desc": "具美歐孤兒藥資格，以授權里程碑金為核心變現模式" },
+          { "name": "HDAC6 抑制劑與皮膚新藥管線", "pct": null, "tag": "早期臨床推進", "desc": "具備美歐發明專利保護之多元適應症儲備管線" }
+        ]
+      }
+    },
+    {
+      "id": "6634",
+      "yahoo_symbol": "6634.TWO",
+      "name": "欣耀",
+      "en_name": "Sinew Pharma",
+      "market": "TW",
+      "exchange": "ESB",
+      "currency": "TWD",
+      "segment": "esb_biotech",
+      "tagline": "上市創投鑽石投資 (6901) 持股 9.39% 董事代表，鎖定脂肪肝炎 MASH 與無肝毒止痛新藥",
+      "featured": false,
+      "news_query": "\"欣耀\" (6634 OR 鑽石投資 OR MASH OR SNP-810 OR 美國) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "上市創投重磅金主：上市生技創投鑽石投資 (6901) 持股約 9.39% 並擔任法人董事，與佳峻投資 (9.62%) 並列前兩大股東。",
+        "investors": [
+          {
+            "name": "鑽石投資 (Diamond Biofund)",
+            "ticker": "6901",
+            "listed_status": "上市公司轉投資",
+            "pct": 9.39,
+            "pct_label": "約 9.39% (法人董事)",
+            "role": "核心上市創投金主",
+            "note": "鑽石投資為中天/富邦/台新/潤泰聯合發起，長期陪跑欣耀臨床推進"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": false,
+        "has_mou": false,
+        "summary": "聚焦美國與全球龐大脂肪肝炎 (MASH) 市場：動物毒理與臨床數據獲美國研究機構與波士頓 MASH 高峰會高度關注，積極爭取美國藥廠授權。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "美國波士頓 MASH 高峰會 & 美歐專利授權平台",
+            "coop_type": "FDA 臨床推進 + 歐美專利授權",
+            "status": "美歐臨床授權洽談",
+            "detail": "SNP-6 系列（MASH 治療）與 SNP-810（安泰拿疼無肝毒止痛劑）完成美歐毒理與臨床關鍵里程碑，並於美國國際高峰會發表吸引海外大廠洽談。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "新藥臨床授權模式",
+        "note": "雙核心聚焦 MASH 代謝肝病與安全型止痛新藥",
+        "items": [
+          { "name": "SNP-6 代謝脂肪肝炎 MASH 新藥", "pct": null, "tag": "全球大市場授權", "desc": "複方新劑型與全新機轉並進，鎖定數百億美元 MASH 藍海" },
+          { "name": "SNP-810 高肝安全性止痛新藥", "pct": null, "tag": "臨床推進", "desc": "降低乙醯胺酚肝毒性風險，瞄準歐美主流止痛市場" }
+        ]
+      }
+    },
+    {
+      "id": "6572",
+      "yahoo_symbol": "6572.TWO",
+      "name": "博錸",
+      "en_name": "PlexBio",
+      "market": "TW",
+      "exchange": "ESB",
+      "currency": "TWD",
+      "segment": "esb_biotech",
+      "tagline": "日商電化 (Denka) 持股 34.84% 第一大股東，美商 DPT 入股 11.81% 之台美日精準檢測廠",
+      "featured": false,
+      "news_query": "\"博錸\" (6572 OR Denka OR 電化 OR 檢測 OR 美國 OR 日本) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "日美雙跨國金主撐腰：東京證交所上市大廠日商電化株式會社 (Denka, 4061.T) 持股高達 34.84% 為第一大股東兼董事；美商 DPT Biofund 持股 11.81%。",
+        "investors": [
+          {
+            "name": "日商電化株式會社 (Denka Co., Ltd.)",
+            "ticker": "JP 4061",
+            "listed_status": "日股上市集團控股",
+            "pct": 34.84,
+            "pct_label": "約 34.84% (第一大股東/董事)",
+            "role": "日本戰略母集團金主",
+            "note": "持股 36,113 張，結合 Denka 全球試劑通路共同推廣多元檢測"
+          },
+          {
+            "name": "美商 DPT Biofund LLC",
+            "ticker": "US Venture",
+            "listed_status": "美國生醫創投法人",
+            "pct": 11.81,
+            "pct_label": "約 11.81% (法人董事)",
+            "role": "美國重要策略大股東",
+            "note": "持股 12,246 張，支持精準醫療檢測切入歐美臨床市場"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "台日美技術與資本鐵三角：獲日本 Denka 策略入股並共同開發高階伴隨式診斷試劑，且於美國與亞洲醫療實驗室推廣 πCode 影像晶圓平台。",
+        "partners": [
+          {
+            "country": "JP",
+            "partner": "Denka 電化株式會社 (TSE: 4061)",
+            "coop_type": "策略入股 (34.84%) + 共同開發與全球經銷",
+            "status": "商業合作與供貨中",
+            "detail": "深度結合 Denka 試劑開發實力與博錸影像式多元檢測分析儀，搶進癌症伴隨式診斷與感染症篩檢。"
+          },
+          {
+            "country": "US",
+            "partner": "DPT Biofund / 美國分子診斷臨床中心",
+            "coop_type": "美資董事策略支持 + 美國市場推廣",
+            "status": "業務拓展中",
+            "detail": "推進 πCode 微型生物碟片與高通量核酸檢測平台導入歐美醫療檢驗實驗室。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "多元分子診斷儀器與試劑",
+        "note": "依循「儀器裝機＋耗材檢測試劑」封閉系統商業模式",
+        "items": [
+          { "name": "πCode / IntelliPlex 精準檢驗儀器與試劑", "pct": 100, "desc": "癌症基因變異伴隨式診斷與多重呼吸道/感染症檢測套組" }
+        ]
+      }
+    },
+    {
+      "id": "6876",
+      "yahoo_symbol": "6876.TWO",
+      "name": "朗齊*",
+      "en_name": "Launxp International",
+      "market": "TW",
+      "exchange": "ESB",
+      "currency": "TWD",
+      "segment": "esb_biotech",
+      "tagline": "興櫃腫瘤與代謝創新藥廠，積極向美國 FDA 申請 IND 並曾引進美商 APL-101 亞洲授權",
+      "featured": false,
+      "news_query": "\"朗齊\" (6876 OR Apollomics OR LXP103 OR FDA) when:30d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": false,
+        "summary": "經營團隊與法人分散持股：由王繼賢董事長與創辦人陳丘泓團隊主導（成瀚投資等內部人與國內股東共同支持），尚無單一上市櫃集團控股。",
+        "investors": [
+          {
+            "name": "王繼賢 / 陳丘泓創辦經營團隊與成瀚投資",
+            "ticker": "創辦團隊",
+            "listed_status": "經營核心大股東",
+            "pct": 16.0,
+            "pct_label": "千張大戶約 16% (董監分散持股)",
+            "role": "核心研發與經營團隊",
+            "note": "目前無單一上市櫃轉投資母公司，以國內自然人與研發團隊為主"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "透過國際引進授權與美國 FDA IND 申請推進管線：主力減脂與代謝藥 LXP103 鎖定美國 FDA 臨床，先前與美商 Apollomics 之亞洲授權現進入法律協商階段。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "美國 FDA IND (LXP103) / 美商 Apollomics (爭議協商中)",
+            "coop_type": "FDA IND 臨床推進 + 跨境授權合作",
+            "status": "IND 推進 / 原美商授權協商中",
+            "detail": "推進 LXP103 向美國 FDA 申請臨床試驗；2025 年曾與美國 Apollomics 簽署非小細胞肺癌 c-Met 抑制劑 APL-101 授權協議（涵蓋日本等亞洲區），2026 年中雙方就履約產生爭議協商中。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "新藥臨床前與早期臨床開發",
+        "note": "聚焦三陰性乳癌、難治性腫瘤及減脂代謝新藥管線",
+        "items": [
+          { "name": "腫瘤標靶與代謝新藥 (LXP105 / LXP103 / LXPB5268)", "pct": null, "tag": "早期臨床研發", "desc": "尋求美國 FDA IND 核准與亞太合作夥伴推動後續臨床" }
+        ]
+      }
+    },
+    {
+      "id": "6945",
+      "yahoo_symbol": "6945.TWO",
+      "name": "圓祥生技",
+      "en_name": "AP Biosciences",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "new_drug_hub",
+      "tagline": "2026 年由興櫃轉上櫃！潤泰集團力挺逾 3 成，雙特異性抗體對接歐美亞國際授權",
+      "featured": false,
+      "news_query": "\"圓祥生技\" (6945 OR 潤泰 OR 雙抗 OR 授權 OR 上櫃) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "潤泰集團重磅孵化：潤泰集團 (2915/9945) 透過集團投資與法人代表深耕董事會，連同經營團隊與 Delos Capital 等核心股東持股逾三成且承諾上櫃不減碼。",
+        "investors": [
+          {
+            "name": "潤泰集團 (尹崇堯 / 陳志全法人代表)",
+            "ticker": "2915 / 9945",
+            "listed_status": "上市集團轉投資",
+            "pct": 30.0,
+            "pct_label": "董事及核心法人合計逾 30%",
+            "role": "最大背後推手與創始金主",
+            "note": "潤泰集團自早期孵化一路加碼至 2026 年上櫃仍零減持力挺"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": false,
+        "has_mou": false,
+        "summary": "跨國雙特異性抗體授權：攜手美系投資銀行與 Delos Capital 推進免疫雙抗國際合資公司 (JV) 與歐美亞大藥廠再授權。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "Delos Capital / 美國國際投行再授權通路",
+            "coop_type": "美系資本合資 + 歐美大藥廠洽談授權",
+            "status": "國際授權推進中",
+            "detail": "眼科雙抗 IBI302 完成三期主要療效終點；與美系資本合作規劃設立免疫雙抗合資公司並推進 AP505/Omni-Mab 跨國大藥廠授權。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "雙特異性抗體平台授權",
+        "note": "基於 Omni-Mab / T-cube 專利抗體庫收取簽約金與里程碑授權金",
+        "items": [
+          { "name": "眼科與腫瘤雙抗新藥授權金 (IBI302 / AP505 等)", "pct": null, "tag": "三期達標・授權變現", "desc": "透過國際藥廠臨床合作與簽約里程碑金實現商業化收益" }
+        ]
+      }
+    },
+    {
+      "id": "6936",
+      "yahoo_symbol": "6936.TW",
+      "name": "永鴻生技",
+      "en_name": "Yungshin Animal Health",
+      "market": "TW",
+      "exchange": "TWSE",
+      "currency": "TWD",
+      "segment": "specialty_api",
+      "tagline": "2025 年由興櫃轉上市！永信投控 (3705) 持股 50.02% 絕對控股，搶攻日本寵物藥與美國外銷",
+      "featured": false,
+      "news_query": "\"永鴻生技\" (6936 OR 永信 OR 寵物 OR 日本 OR 美國) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "上市母集團絕對控股金主：上市公司永信國際投控 (3705) 及法人代表合計持股高達 50.02%，前身為併購美商輝瑞/碩騰台灣事業整併而成。",
+        "investors": [
+          {
+            "name": "永信國際投資控股",
+            "ticker": "3705",
+            "listed_status": "上市公司控股 (>50%)",
+            "pct": 50.02,
+            "pct_label": "約 50.02% (母公司絕對控股)",
+            "role": "上市控制性母公司",
+            "note": "永信集團整合動物保健與伴侶動物商機孵化之獨立上市金雞"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "前身為美國碩騰（原輝瑞動保）工廠，持有美國、東南亞及中南美洲外銷許可證，並積極推進日本寵物用藥生物相等性 (BE) 試驗取證。",
+        "partners": [
+          {
+            "country": "JP",
+            "partner": "日本寵物藥品市場 / 日本 BE 試驗送件",
+            "coop_type": "日本動物用藥 BE 試驗與取證",
+            "status": "取證推進中",
+            "detail": "針對日本龐大毛孩老齡化市場推進專屬寵物治療藥物之生物相等性試驗 (BE) 與日本上市審查。"
+          },
+          {
+            "country": "US",
+            "partner": "美國原料藥認證暨外銷 (原碩騰美系工廠體系)",
+            "coop_type": "國際動物藥製造與外銷許可證",
+            "status": "穩定外銷中",
+            "detail": "承接美系 GMP 產線高標準，持有多國包含美國與亞太動物藥品/飼料添加劑許可證穩定出貨。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "台灣最大專業動物製藥廠",
+        "note": "高毛利伴侶動物保健與經濟動物藥品雙軌成長",
+        "items": [
+          { "name": "經濟動物治療藥品與飼料添加劑 (歐羅肥等)", "pct": 70, "desc": "台灣市占領先之動物藥品、益生菌及海外牧場外銷" },
+          { "name": "伴侶動物寵物處方藥與保健品 (可沛)", "pct": 30, "desc": "進軍台灣與日本高毛利毛孩醫療與保健藍海" }
         ]
       }
     }

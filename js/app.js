@@ -277,6 +277,7 @@
     const bullMaCount = stocks.filter((s) => s.metrics.ma20 && s.latest.close >= s.metrics.ma20).length;
 
     const twBackerCount = twStocks.filter((s) => s.capital_backers && s.capital_backers.has_listed_backer).length;
+    const twEsbCount = twStocks.filter((s) => s.exchange === "ESB").length;
     const twJpCount = twStocks.filter((s) => s.intl_coop && s.intl_coop.has_jp).length;
     const twUsCount = twStocks.filter((s) => s.intl_coop && s.intl_coop.has_us).length;
     const twMouCount = twStocks.filter((s) => s.intl_coop && s.intl_coop.has_mou).length;
@@ -297,7 +298,7 @@
         <div class="kpi-sub">單日 <span class="mono ${nbi ? chgClass(nbi.latest.change_pct) : ""}">${nbi ? fmtPct(nbi.latest.change_pct) : "—"}</span> ｜ 20日 <span class="mono ${nbi ? chgClass(nbi.metrics.ret_20d) : ""}">${nbi ? fmtPct(nbi.metrics.ret_20d) : "—"}</span></div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-label"><span>生技族群多空溫度計</span><span class="mono">${stocks.length} 檔個股</span></div>
+        <div class="kpi-label"><span>生技族群多空溫度計</span><span class="mono">${stocks.length} 檔個股 (含興櫃 ${twEsbCount})</span></div>
         <div class="kpi-value mono">${upCount} 漲 / ${stocks.length - upCount} 跌</div>
         <div class="kpi-sub">站上月線 MA20：<span class="mono" style="color:var(--cyan)">${bullMaCount} / ${stocks.length} 檔</span></div>
       </div>
@@ -315,6 +316,7 @@
     const pills = [
       { id: "all", label: "全部" },
       { id: "watchlist", label: "★ 自選" },
+      { id: "is_esb", label: "🌱 興櫃生技" },
       { id: "has_backer", label: "🏦 有金主" },
       { id: "has_jp", label: "🇯🇵 日本合作" },
       { id: "has_us", label: "🇺🇸 美國合作" },
@@ -339,6 +341,7 @@
   function matchesFilterPill(stock, pillId) {
     if (pillId === "all") return true;
     if (pillId === "watchlist") return state.watchlist.has(stock.id);
+    if (pillId === "is_esb") return stock.exchange === "ESB";
     if (pillId === "has_backer") return Boolean(stock.capital_backers && stock.capital_backers.has_listed_backer);
     if (pillId === "has_jp") return Boolean(stock.intl_coop && stock.intl_coop.has_jp);
     if (pillId === "has_us") return Boolean(stock.intl_coop && stock.intl_coop.has_us);
@@ -758,6 +761,7 @@
     const filterEl = document.getElementById("tableSegmentFilters");
     const pills = [
       { id: "all", label: "全部標的" },
+      { id: "is_esb", label: "🌱 興櫃生技 (ESB)" },
       { id: "has_backer", label: "🏦 有上市櫃金主" },
       { id: "has_jp", label: "🇯🇵 有日本合作" },
       { id: "has_us", label: "🇺🇸 有美國合作" },
@@ -1458,6 +1462,7 @@
       btn.addEventListener("click", () => {
         const map = {
           cdmo_all: ["6472", "6589", "4726", "6541", "4746", "4142"],
+          esb_all: ["6696", "7729", "7754", "6634", "6572", "6876"],
           backers: ["4123", "4746", "4105", "4128", "6901"],
           new_drug: ["6446", "6838", "4162", "4743", "6535", "1795"],
           jp_alliance: ["4726", "6589", "6733", "6499", "1760", "4162"],
