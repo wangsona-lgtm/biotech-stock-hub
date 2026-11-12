@@ -329,6 +329,8 @@
       { id: "is_twse", label: "🏛️ 上市" },
       { id: "is_tpex", label: "📈 上櫃" },
       { id: "is_esb", label: "🌱 興櫃" },
+      { id: "insti_buy5", label: "🔥 法人5日買超" },
+      { id: "big_holder", label: "🐋 千張大戶>=45%" },
       { id: "has_backer", label: "🏦 有金主" },
       { id: "has_jp", label: "🇯🇵 日本合作" },
       { id: "has_us", label: "🇺🇸 美國合作" },
@@ -356,6 +358,8 @@
     if (pillId === "is_twse") return stock.exchange === "TWSE";
     if (pillId === "is_tpex") return stock.exchange === "TPEx";
     if (pillId === "is_esb") return stock.exchange === "ESB";
+    if (pillId === "insti_buy5") return Boolean(stock.chips && stock.chips.insti_5d && stock.chips.insti_5d.total > 0);
+    if (pillId === "big_holder") return Boolean(stock.chips && stock.chips.tdcc && stock.chips.tdcc.big1000_pct >= 45);
     if (pillId === "has_backer") return Boolean(stock.capital_backers && stock.capital_backers.has_listed_backer);
     if (pillId === "has_jp") return Boolean(stock.intl_coop && stock.intl_coop.has_jp);
     if (pillId === "has_us") return Boolean(stock.intl_coop && stock.intl_coop.has_us);
@@ -691,8 +695,107 @@
       )
       .join("");
 
+    renderChipsSection(s);
     renderRevenueMix(s, document.getElementById("revenueMixCard"), document.getElementById("revMixBasis"));
     renderStockNews(s, document.getElementById("stockNewsCard"));
+  }
+
+  function renderChipsSection(stock) {
+    const summaryEl = document.getElementById("chipsSummaryCard");
+    const badgeEl = document.getElementById("chipsBadgeArea");
+    const ch = stock.chips || {};
+    const fmtLots = (v) => {
+      if (v === null || v === undefined || Number.isNaN(v)) return "—";
+      const s = v > 0 ? "+" : "";
+      return `${s}${Number(v).toLocaleString("en-US", { maximumFractionDigits: 1 })} 張`;
+    };
+
+    if (badgeEl) {
+      const tags = ch.chips_tags || [];
+      badgeEl.innerHTML = tags
+        .map((t) => {
+          const isBull = t.includes("買") || t.includes("高集中") || t.includes("吸籌");
+          const isBear = t.includes("賣") || t.includes("調節");
+          const cls = isBull ? "is-backer" : isBear ? "is-jp" : "is-none";
+          return `<span class="bio-badge ${cls}">${escHtml(t)}</span>`;
+        })
+        .join(" ");
+    }
+
+    if (summaryEl) {
+      const i1 = ch.insti_1d;
+      const i5 = ch.insti_5d;
+      const streak = ch.insti_streak || 0;
+      const streakTxt = streak > 1 ? `連買 ${streak} 日` : streak < -1 ? `連賣 ${Math.abs(streak)} 日` : "近期震盪";
+      const instiMain = i5 ? fmtLots(i5.total) : "無上市櫃日報";
+      const instiCls = i5 ? chgClass(i5.total) : "flat";
+      const instiSub = i5
+        ? `最近一日 ${i1 ? `${i1.d.slice(5)} ${fmtLots(i1.total)}` : "—"}<br>5日拆分：外 <span class="${chgClass(i5.foreign)}">${fmtLots(i5.foreign)}</span> · 投 <span class="${chgClass(i5.trust)}">${fmtLots(i5.trust)}</span>`
+        : "興櫃／海外標的依集保大戶與機構持股觀察";
+
+      const td = ch.tdcc;
+      const whalePct = td && td.big1000_pct !== undefined ? td.big1000_pct : null;
+      const mid400Pct = td && td.big400_pct !== undefined ? Math.max(0, +(td.big400_pct - td.big1000_pct).toFixed(2)) : 0;
+      const retailPct = td && td.retail_pct !== undefined ? td.retail_pct : null;
+      const otherPct = whalePct !== null && retailPct !== null ? Math.max(0, +(100 - whalePct - mid400Pct - retailPct).toFixed(2)) : 0;
+
+      const tdccHtml = td
+        ? `
+          <div class="chip-box-main mono" style="color:#fde047">${whalePct.toFixed(2)}% <span style="font-size:0.74rem;color:var(--text-dim)">(千張大戶 ${td.big1000_holders} 人)</span></div>
+          <div class="chip-bar-track" title="黃:千張大戶 / 藍:400~1000張 / 粉:5張以下散戶">
+            <div class="chip-bar-whale" style="width:${whalePct}%"></div>
+            <div class="chip-bar-mid" style="width:${mid400Pct}%"></div>
+            <div style="width:${otherPct}%;background:rgba(148,163,184,0.22)"></div>
+            <div class="chip-bar-retail" style="width:${retailPct}%"></div>
+          </div>
+          <div class="chip-box-sub">>=400張大戶 <strong class="mono">${td.big400_pct.toFixed(1)}%</strong> · 散戶(&lt;=5張) <strong class="mono">${retailPct.toFixed(1)}%</strong> · 總股東 <strong class="mono">${td.total_holders.toLocaleString()}</strong> 人 (${td.date})</div>
+        `
+        : `<div class="chip-box-main mono" style="color:var(--text-muted)">${ch.inst_hold_pct !== null && ch.inst_hold_pct !== undefined ? ch.inst_hold_pct.toFixed(1) + "%" : "—"}</div>
+           <div class="chip-box-sub">機構持股比：${ch.inst_hold_pct !== null && ch.inst_hold_pct !== undefined ? ch.inst_hold_pct.toFixed(1) + "%" : "—"} ｜ 內部人持股：${ch.insiders_pct !== null && ch.insiders_pct !== undefined ? ch.insiders_pct.toFixed(1) + "%" : "—"}</div>`;
+
+      const mg = ch.margin;
+      const marginHtml = mg
+        ? `
+          <div class="chip-box-main mono">${mg.margin_bal.toLocaleString()} <span style="font-size:0.75rem" class="${chgClass(mg.margin_chg)}">(${mg.margin_chg > 0 ? "+" : ""}${mg.margin_chg} 張)</span></div>
+          <div class="chip-box-sub">融券餘額 <strong class="mono">${mg.short_bal.toLocaleString()}</strong> 張 (${mg.short_chg > 0 ? "+" : ""}${mg.short_chg}) · 券資比 <strong class="mono">${mg.short_ratio.toFixed(2)}%</strong> (${mg.date})</div>
+        `
+        : `<div class="chip-box-main mono" style="color:var(--text-dim)">—</div>
+           <div class="chip-box-sub">${stock.exchange === "ESB" ? "興櫃不開放融資融券，改以千張大戶與量價買盤追蹤" : "非台灣信用交易或暫無融資券餘額"}</div>`;
+
+      const instHoldDisplay = ch.inst_hold_pct !== null && ch.inst_hold_pct !== undefined ? `${ch.inst_hold_pct.toFixed(2)}%` : "—";
+      const upVolDisplay = ch.up_vol_ratio_20d !== null && ch.up_vol_ratio_20d !== undefined ? `${ch.up_vol_ratio_20d.toFixed(1)}%` : "—";
+
+      summaryEl.innerHTML = `
+        <div class="chips-kpi-grid">
+          <div class="chip-box">
+            <div class="chip-box-title"><span>三大法人近5日累計</span><span class="mono" style="color:var(--cyan)">${streakTxt}</span></div>
+            <div class="chip-box-main mono ${instiCls}">${instiMain}</div>
+            <div class="chip-box-sub">${instiSub}</div>
+          </div>
+          <div class="chip-box">
+            <div class="chip-box-title"><span>集保主力千張大戶比</span><span class="mono">TDCC 週報</span></div>
+            ${tdccHtml}
+          </div>
+          <div class="chip-box">
+            <div class="chip-box-title"><span>融資餘額與增減</span><span class="mono">信用籌碼</span></div>
+            ${marginHtml}
+          </div>
+          <div class="chip-box">
+            <div class="chip-box-title"><span>外資/機構持股 · 買盤動能</span><span class="mono">20日量價</span></div>
+            <div class="chip-box-main mono" style="color:var(--cyan)">${instHoldDisplay} <span style="font-size:0.74rem;color:var(--text-dim)">外資/機構</span></div>
+            <div class="chip-box-sub">近20日上漲日量能佔比：<strong class="mono ${ch.up_vol_ratio_20d >= 55 ? "up" : ""}">${upVolDisplay}</strong>${ch.insiders_pct !== null && ch.insiders_pct !== undefined ? ` ｜ 內部人 ${ch.insiders_pct.toFixed(1)}%` : ""}</div>
+          </div>
+        </div>
+      `;
+    }
+
+    if (window.BioCharts && window.BioCharts.renderInstiChart) {
+      window.BioCharts.renderInstiChart(
+        document.getElementById("instiCanvas"),
+        document.getElementById("instiHud"),
+        stock
+      );
+    }
   }
 
   function renderRevenueMix(stock, containerEl, basisEl) {
@@ -778,6 +881,8 @@
       { id: "is_twse", label: "🏛️ 上市 (TWSE)" },
       { id: "is_tpex", label: "📈 上櫃 (TPEx)" },
       { id: "is_esb", label: "🌱 興櫃 (ESB)" },
+      { id: "insti_buy5", label: "🔥 法人5日買超" },
+      { id: "big_holder", label: "🐋 千張大戶>=45%" },
       { id: "has_backer", label: "🏦 有上市櫃金主" },
       { id: "has_jp", label: "🇯🇵 有日本合作" },
       { id: "has_us", label: "🇺🇸 有美國合作" },
@@ -876,6 +981,8 @@
         }
         case "has_jp": return (s.intl_coop && s.intl_coop.has_jp ? 2 : 0) + (s.intl_coop && s.intl_coop.has_mou ? 1 : 0);
         case "has_us": return (s.intl_coop && s.intl_coop.has_us ? 2 : 0) + (s.intl_coop && s.intl_coop.has_mou ? 1 : 0);
+        case "insti_5d": return s.chips?.insti_5d?.total ?? null;
+        case "big1000_pct": return s.chips?.tdcc?.big1000_pct ?? null;
         case "pb": return s.fundamentals.pb;
         case "pe": return s.fundamentals.pe;
         case "rsi14": return s.metrics.rsi14;
@@ -900,6 +1007,10 @@
         const usTxt = getCountryShortText(s, "US");
         const hasMou = s.intl_coop && s.intl_coop.has_mou;
         const mouTag = hasMou ? ` <span class="bio-badge is-mou" style="padding:1px 5px;font-size:0.64rem">MOU</span>` : "";
+        const i5v = s.chips?.insti_5d?.total;
+        const i5Txt = i5v !== null && i5v !== undefined ? `${i5v > 0 ? "+" : ""}${i5v.toLocaleString("en-US", { maximumFractionDigits: 1 })}` : "—";
+        const b1000 = s.chips?.tdcc?.big1000_pct;
+        const b1000Txt = b1000 !== null && b1000 !== undefined ? `${b1000.toFixed(1)}%` : "—";
 
         return `
         <tr data-id="${s.id}">
@@ -914,6 +1025,8 @@
           <td style="text-align:left;max-width:260px;white-space:normal;line-height:1.35;color:${s.capital_backers?.has_listed_backer ? "#fde047" : "var(--text-muted)"}">${escHtml(backerTxt)}</td>
           <td style="text-align:left;max-width:220px;white-space:normal;line-height:1.35;color:${s.intl_coop?.has_jp ? "#f9a8d4" : "var(--text-dim)"}">${escHtml(jpTxt)}${s.intl_coop?.has_jp ? mouTag : ""}</td>
           <td style="text-align:left;max-width:220px;white-space:normal;line-height:1.35;color:${s.intl_coop?.has_us ? "#7dd3fc" : "var(--text-dim)"}">${escHtml(usTxt)}${s.intl_coop?.has_us && !s.intl_coop?.has_jp ? mouTag : ""}</td>
+          <td class="mono ${chgClass(i5v)}" style="font-weight:700">${i5Txt}</td>
+          <td class="mono" style="color:${b1000 >= 45 ? "#fde047" : "var(--text-main)"}">${b1000Txt}</td>
           <td class="mono">${s.fundamentals.pb ? s.fundamentals.pb.toFixed(2) + "x" : "—"}</td>
           <td class="mono">${s.fundamentals.pe ? s.fundamentals.pe.toFixed(1) + "x" : "—"}</td>
           <td class="mono">${s.metrics.rsi14 !== null ? s.metrics.rsi14.toFixed(1) : "—"}</td>
@@ -1317,7 +1430,8 @@
       "上市櫃金主轉投資與比例", "日本合作(MOU)", "美國合作(MOU)", "是否有簽MOU/合資",
       "最新日期", "收盤價", "單日漲跌幅(%)", "20日報酬(%)", "60日報酬(%)", "2025至今(%)",
       "淨值比(PB)", "本益比(PE)", "殖利率(%)", "毛利率(%)", "營益率(%)",
-      "MA20", "MA60", "MA200", "RSI(14)", "相對NBI 3M(pp)", "下次財報日"
+      "MA20", "MA60", "MA200", "RSI(14)", "相對NBI 3M(pp)",
+      "三大法人1日(張)", "三大法人5日(張)", "外資或機構持股(%)", "千張大戶(%)", "400張大戶(%)", "融資餘額(張)", "融券餘額(張)", "下次財報日"
     ];
     const esc = (v) => {
       if (v === null || v === undefined) return "";
@@ -1334,7 +1448,11 @@
       s.metrics.ret_20d, s.metrics.ret_60d, s.metrics.ret_from_2025,
       s.fundamentals.pb, s.fundamentals.pe, s.fundamentals.dividend_yield,
       s.fundamentals.gross_margin, s.fundamentals.operating_margin,
-      s.metrics.ma20, s.metrics.ma60, s.metrics.ma200, s.metrics.rsi14, s.metrics.vs_nbi_3m, s.fundamentals.earnings_date
+      s.metrics.ma20, s.metrics.ma60, s.metrics.ma200, s.metrics.rsi14, s.metrics.vs_nbi_3m,
+      s.chips?.insti_1d?.total, s.chips?.insti_5d?.total, s.chips?.inst_hold_pct,
+      s.chips?.tdcc?.big1000_pct, s.chips?.tdcc?.big400_pct,
+      s.chips?.margin?.margin_bal, s.chips?.margin?.short_bal,
+      s.fundamentals.earnings_date
     ].map(esc).join(","));
 
     const csvContent = "\uFEFF" + [headers.join(","), ...rows].join("\r\n");
