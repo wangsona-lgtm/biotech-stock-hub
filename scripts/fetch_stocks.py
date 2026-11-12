@@ -518,11 +518,22 @@ def fetch_yahoo_history(
 ) -> List[Dict[str, Any]]:
     """從 Yahoo Finance v8/finance/chart 取得 2 年日 K 線資料（覆蓋 2025 至今與 MA200）"""
     encoded_sym = urllib.parse.quote(symbol, safe="")
-    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{encoded_sym}?range=2y&interval=1d"
-    payload = http_get_json(url, opener=opener)
-    res_list = payload.get("chart", {}).get("result")
-    if not res_list:
+    payload = None
+    last_err: Optional[Exception] = None
+    for host in ("query1.finance.yahoo.com", "query2.finance.yahoo.com"):
+        url = f"https://{host}/v8/finance/chart/{encoded_sym}?range=2y&interval=1d"
+        try:
+            payload = http_get_json(url, opener=opener)
+            if payload.get("chart", {}).get("result"):
+                break
+        except Exception as e:
+            last_err = e
+            time.sleep(0.3)
+    if not payload or not payload.get("chart", {}).get("result"):
+        if last_err is not None:
+            raise last_err
         raise ValueError(f"{symbol} 無 chart 資料")
+    res_list = payload.get("chart", {}).get("result")
 
     res = res_list[0]
     timestamps = res.get("timestamp") or []
@@ -556,6 +567,82 @@ def fetch_yahoo_history(
             "v": int(round(v)),
         }
 
+    return [by_date[k] for k in sorted(by_date.keys())]
+
+
+def _roc_to_iso(roc_date: str) -> Optional[str]:
+    clean = str(roc_date or "").replace("*", "").strip()
+    parts = clean.split("/")
+    if len(parts) != 3 or not all(p.isdigit() for p in parts):
+        return None
+    year = int(parts[0]) + 1911
+    return f"{year:04d}-{int(parts[1]):02d}-{int(parts[2]):02d}"
+
+
+def fetch_tw_official_history(stock_id: str, months_back: int = 25) -> List[Dict[str, Any]]:
+    """當 Yahoo Finance chart 缺漏台股 K 線時，由 TWSE STOCK_DAY 與 TPEx tradingStock 補齊官方日線"""
+    tz_tw = datetime.timezone(datetime.timedelta(hours=8))
+    now = datetime.datetime.now(tz=tz_tw).date()
+    by_date: Dict[str, Dict[str, Any]] = {}
+
+    y, m = now.year, now.month
+    month_starts: List[datetime.date] = []
+    for _ in range(months_back):
+        month_starts.append(datetime.date(y, m, 1))
+        m -= 1
+        if m == 0:
+            m = 12
+            y -= 1
+
+    for dt_m in month_starts:
+        yyyymmdd = dt_m.strftime("%Y%m01")
+        got_month = False
+        try:
+            twse_url = f"https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date={yyyymmdd}&stockNo={stock_id}"
+            twse_data = http_get_json(twse_url, timeout=12)
+            for row in twse_data.get("data") or []:
+                if len(row) < 7:
+                    continue
+                iso_d = _roc_to_iso(row[0])
+                c = parse_float(row[6])
+                if not iso_d or c is None or c <= 0:
+                    continue
+                o = parse_float(row[3]) or c
+                h = parse_float(row[4]) or max(o, c)
+                l = parse_float(row[5]) or min(o, c)
+                vol = int(round(parse_float(row[1]) or 0.0))
+                by_date[iso_d] = {"d": iso_d, "o": round(o, 2), "h": round(h, 2), "l": round(l, 2), "c": round(c, 2), "v": vol}
+                got_month = True
+        except Exception:
+            pass
+
+        if not got_month:
+            try:
+                slash_d = dt_m.strftime("%Y/%m/01")
+                tpex_url = f"https://www.tpex.org.tw/www/zh-tw/afterTrading/tradingStock?code={stock_id}&date={slash_d}&response=json"
+                tpex_data = http_get_json(tpex_url, timeout=12)
+                tables = tpex_data.get("tables") or []
+                rows = (tables[0].get("data") or []) if tables else []
+                for row in rows:
+                    if len(row) < 7:
+                        continue
+                    iso_d = _roc_to_iso(row[0])
+                    c = parse_float(row[6])
+                    if not iso_d or c is None or c <= 0:
+                        continue
+                    o = parse_float(row[3]) or c
+                    h = parse_float(row[4]) or max(o, c)
+                    l = parse_float(row[5]) or min(o, c)
+                    lots = parse_float(row[1]) or 0.0
+                    vol = int(round(lots * 1000.0))
+                    by_date[iso_d] = {"d": iso_d, "o": round(o, 2), "h": round(h, 2), "l": round(l, 2), "c": round(c, 2), "v": vol}
+            except Exception:
+                pass
+
+        time.sleep(0.08)
+
+    if by_date:
+        print(f"  [OK] {stock_id} 官方 TWSE/TPEx 日線備援補齊 {len(by_date)} 筆")
     return [by_date[k] for k in sorted(by_date.keys())]
 
 
@@ -792,11 +879,15 @@ def main() -> int:
         market = item["market"]
         try:
             history = fetch_yahoo_history(ysym, market, opener)
+        except Exception as e:
+            print(f"  [WARN] 預先擷取 {sid} K 線失敗: {e}")
+            history = []
+        if len(history) < 2 and market == "TW":
+            history = fetch_tw_official_history(sid)
+        if history:
             history_by_id[sid] = history
             if sid == "^NBI" and len(history) >= 2:
                 nbi_metrics, _ = analyze_stock(history, None)
-        except Exception as e:
-            print(f"  [WARN] 預先擷取 {sid} K 線失敗: {e}")
         time.sleep(0.12)
 
     segment_map = {seg["id"]: seg["label"] for seg in config["segments"]}

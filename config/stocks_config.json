@@ -121,11 +121,11 @@
     },
     {
       "id": "6589",
-      "yahoo_symbol": "6589.TWO",
+      "yahoo_symbol": "6589.TW",
       "name": "台康生技",
       "en_name": "EirGenix",
       "market": "TW",
-      "exchange": "TPEx",
+      "exchange": "TWSE",
       "currency": "TWD",
       "segment": "cdmo_bio",
       "tagline": "鴻海與台耀雙上市集團轉投資，通過日本 PMDA 查廠之生物相似藥與 CDMO 龍頭",
