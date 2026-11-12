@@ -127,6 +127,14 @@
       .replace(/"/g, "&quot;");
   }
 
+  function fmtExchLabel(s) {
+    if (!s) return "";
+    if (s.exchange === "TWSE") return "TWSE 上市";
+    if (s.exchange === "TPEx") return "TPEx 上櫃";
+    if (s.exchange === "ESB") return "ESB 興櫃";
+    return s.exchange || "";
+  }
+
   function getSeries(stock) {
     if (!state.seriesCache.has(stock.id)) {
       state.seriesCache.set(stock.id, window.BioIndicators.computeSeries(stock.history || []));
@@ -277,6 +285,8 @@
     const bullMaCount = stocks.filter((s) => s.metrics.ma20 && s.latest.close >= s.metrics.ma20).length;
 
     const twBackerCount = twStocks.filter((s) => s.capital_backers && s.capital_backers.has_listed_backer).length;
+    const twTwseCount = twStocks.filter((s) => s.exchange === "TWSE").length;
+    const twTpexCount = twStocks.filter((s) => s.exchange === "TPEx").length;
     const twEsbCount = twStocks.filter((s) => s.exchange === "ESB").length;
     const twJpCount = twStocks.filter((s) => s.intl_coop && s.intl_coop.has_jp).length;
     const twUsCount = twStocks.filter((s) => s.intl_coop && s.intl_coop.has_us).length;
@@ -298,9 +308,9 @@
         <div class="kpi-sub">單日 <span class="mono ${nbi ? chgClass(nbi.latest.change_pct) : ""}">${nbi ? fmtPct(nbi.latest.change_pct) : "—"}</span> ｜ 20日 <span class="mono ${nbi ? chgClass(nbi.metrics.ret_20d) : ""}">${nbi ? fmtPct(nbi.metrics.ret_20d) : "—"}</span></div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-label"><span>生技族群多空溫度計</span><span class="mono">${stocks.length} 檔個股 (含興櫃 ${twEsbCount})</span></div>
+        <div class="kpi-label"><span>生技族群多空溫度計</span><span class="mono">${stocks.length} 檔個股</span></div>
         <div class="kpi-value mono">${upCount} 漲 / ${stocks.length - upCount} 跌</div>
-        <div class="kpi-sub">站上月線 MA20：<span class="mono" style="color:var(--cyan)">${bullMaCount} / ${stocks.length} 檔</span></div>
+        <div class="kpi-sub">上市 ${twTwseCount} · 上櫃 ${twTpexCount} · 興櫃 ${twEsbCount} ｜ 站MA20 <span class="mono" style="color:var(--cyan)">${bullMaCount}</span></div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label"><span>台股金主轉投資與美日聯盟</span><span class="mono">${twStocks.length} 檔台股</span></div>
@@ -316,7 +326,9 @@
     const pills = [
       { id: "all", label: "全部" },
       { id: "watchlist", label: "★ 自選" },
-      { id: "is_esb", label: "🌱 興櫃生技" },
+      { id: "is_twse", label: "🏛️ 上市" },
+      { id: "is_tpex", label: "📈 上櫃" },
+      { id: "is_esb", label: "🌱 興櫃" },
       { id: "has_backer", label: "🏦 有金主" },
       { id: "has_jp", label: "🇯🇵 日本合作" },
       { id: "has_us", label: "🇺🇸 美國合作" },
@@ -341,6 +353,8 @@
   function matchesFilterPill(stock, pillId) {
     if (pillId === "all") return true;
     if (pillId === "watchlist") return state.watchlist.has(stock.id);
+    if (pillId === "is_twse") return stock.exchange === "TWSE";
+    if (pillId === "is_tpex") return stock.exchange === "TPEx";
     if (pillId === "is_esb") return stock.exchange === "ESB";
     if (pillId === "has_backer") return Boolean(stock.capital_backers && stock.capital_backers.has_listed_backer);
     if (pillId === "has_jp") return Boolean(stock.intl_coop && stock.intl_coop.has_jp);
@@ -416,7 +430,7 @@
               <button class="star-btn ${starred}" data-star="${s.id}" title="加入/移除自選">★</button>
               <div style="min-width:0">
                 <div class="stock-item-name">${s.name} <span style="font-size:0.72rem">${miniTags}</span></div>
-                <div class="stock-item-sub mono">${s.id} · ${s.exchange}</div>
+                <div class="stock-item-sub mono">${s.id} · ${fmtExchLabel(s)}</div>
               </div>
             </div>
             <div class="stock-item-right">
@@ -761,7 +775,9 @@
     const filterEl = document.getElementById("tableSegmentFilters");
     const pills = [
       { id: "all", label: "全部標的" },
-      { id: "is_esb", label: "🌱 興櫃生技 (ESB)" },
+      { id: "is_twse", label: "🏛️ 上市 (TWSE)" },
+      { id: "is_tpex", label: "📈 上櫃 (TPEx)" },
+      { id: "is_esb", label: "🌱 興櫃 (ESB)" },
       { id: "has_backer", label: "🏦 有上市櫃金主" },
       { id: "has_jp", label: "🇯🇵 有日本合作" },
       { id: "has_us", label: "🇺🇸 有美國合作" },
@@ -889,7 +905,7 @@
         <tr data-id="${s.id}">
           <td>
             <div style="font-weight:700">${s.name}</div>
-            <div class="mono" style="font-size:0.72rem;color:var(--text-dim)">${s.id} · ${s.exchange}</div>
+            <div class="mono" style="font-size:0.72rem;color:var(--text-dim)">${s.id} · ${fmtExchLabel(s)}</div>
           </td>
           <td><span class="tag-chip">${s.segment_label}</span></td>
           <td class="mono" style="font-weight:700">${fmtPrice(s.latest.close, s)} <span style="font-size:0.7rem;color:var(--text-dim)">${s.currency}</span></td>
@@ -1462,6 +1478,7 @@
       btn.addEventListener("click", () => {
         const map = {
           cdmo_all: ["6472", "6589", "4726", "6541", "4746", "4142"],
+          tpex_all: ["4726", "4123", "4116", "4129", "4120", "6469"],
           esb_all: ["6696", "7729", "7754", "6634", "6572", "6876"],
           backers: ["4123", "4746", "4105", "4128", "6901"],
           new_drug: ["6446", "6838", "4162", "4743", "6535", "1795"],

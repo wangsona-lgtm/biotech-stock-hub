@@ -2389,6 +2389,366 @@
           { "name": "伴侶動物寵物處方藥與保健品 (可沛)", "pct": 30, "desc": "進軍台灣與日本高毛利毛孩醫療與保健藍海" }
         ]
       }
+    },
+    {
+      "id": "4116",
+      "yahoo_symbol": "4116.TWO",
+      "name": "明基醫",
+      "en_name": "BenQ Medical Technology",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "medtech_ai",
+      "tagline": "上櫃醫療大艦隊！佳世達 (2352) 集團綜合持股約 55% 絕對控股，手術室設備與通路併購並進",
+      "featured": false,
+      "news_query": "\"明基醫\" (4116 OR 佳世達 OR 醫材 OR 上櫃) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "上市科技金主重兵控盤：佳世達科技 (2352) 透過明基電通、達利投資與達利貳投資合計綜合持股約 55%，為佳世達醫療大艦隊上櫃核心平台。",
+        "investors": [
+          {
+            "name": "佳世達科技集團 (2352 / 達利投資)",
+            "ticker": "2352",
+            "listed_status": "上市公司控股 (~55%)",
+            "pct": 55.0,
+            "pct_label": "綜合持股約 55% (絕對控股)",
+            "role": "上市集團金主母公司",
+            "note": "由董事長陳其宏率領打造涵蓋手術設備、透析、牙科與藥局醫材艦隊"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "透過佳世達集團全球網與併購拓展美歐日高階醫材：推進手術燈／手術檯外銷與神經外科導航等前瞻醫材合作。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "北美醫療經銷網 & 前瞻手術導航合作",
+            "coop_type": "高階醫材出口 + 集團全球通路",
+            "status": "商業出口擴張中",
+            "detail": "推進手術室設備、超音波與醫療耗材外銷北美及國際市場，並整合集團醫療事業群搶攻國際通路。"
+          },
+          {
+            "country": "JP",
+            "partner": "日本醫療器械通路夥伴",
+            "coop_type": "醫材認證導入與區域經銷",
+            "status": "市場推進中",
+            "detail": "持續透過日本與亞太經銷夥伴推廣手術室設備、牙科及醫用耗材。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "醫療設備、耗材與通路整合",
+        "note": "整併怡安醫材、明基口腔、康科特與明基健康生活擴大醫療平台規模",
+        "items": [
+          { "name": "醫療設備與醫用耗材 (手術室/超音波/齒科)", "pct": 65, "desc": "自有品牌手術檯燈與一次性醫療耗材製造銷售" },
+          { "name": "醫療管理服務與大健康通路", "pct": 35, "desc": "醫管顧問、專業醫材代理與連鎖藥局零售通路" }
+        ]
+      }
+    },
+    {
+      "id": "4120",
+      "yahoo_symbol": "4120.TWO",
+      "name": "友華",
+      "en_name": "Orient EuroPharma",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "holding_vc",
+      "tagline": "上櫃生技轉投資金主！入股興櫃仲恩(8.63%)與安基，攜手日本 Maruho 並通過美國 FDA 查廠",
+      "featured": false,
+      "news_query": "\"友華\" (4120 OR 仲恩 OR 安基 OR Maruho OR FDA) when:30d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": true,
+        "summary": "上櫃醫藥金主與通路霸主：由蔡正弘團隊（誼澤 11.9%、和杏實業 ~12%、愛斯佳投資 ~12%）主導；對外策略轉投資興櫃仲恩生醫 (7729, 8.63%) 與安基生技 (7754, 第二大法人)。",
+        "investors": [
+          {
+            "name": "誼澤 / 和杏實業 / 愛斯佳投資",
+            "ticker": "創辦家族法人",
+            "listed_status": "經營核心法人 (各約12%)",
+            "pct": 35.8,
+            "pct_label": "誼澤11.9% + 和杏~12% + 愛斯佳~12%",
+            "role": "核心經營權大股東",
+            "note": "掌控西藥、營養保健與跨國醫藥代理通路並孵化新藥夥伴"
+          }
+        ],
+        "investees": [
+          {
+            "name": "仲恩生醫 (興櫃)",
+            "ticker": "7729",
+            "pct": 8.63,
+            "note": "私募入股約8.63%任法人董事，策略結盟幹細胞與罕病再生醫療"
+          },
+          {
+            "name": "安基生技 (興櫃)",
+            "ticker": "7754",
+            "pct": null,
+            "note": "與台杉水牛二號並列前兩大法人股東，共同推進 AJ201 罕病新藥"
+          }
+        ]
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "美日雙線並進：旗下友杏生技無菌針劑廠通過美國 FDA PAI 查廠；與日本百年藥廠 Maruho 展開台灣與東協授權合作。",
+        "partners": [
+          {
+            "country": "JP",
+            "partner": "日本百年皮膚藥廠 Maruho",
+            "coop_type": "產品授權與台灣/東協十國經銷",
+            "status": "商業合作推進中",
+            "detail": "引進日本 Maruho 多汗症新藥 Rapifort 等專科用藥，取得台灣及東南亞區域授權與通路商業化。"
+          },
+          {
+            "country": "US",
+            "partner": "美國 FDA 認證友杏針劑廠 / 美國藥品代理",
+            "coop_type": "FDA CDMO 查廠通過 + 新藥代理",
+            "status": "已通過 FDA PAI 查廠",
+            "detail": "子公司友杏通過美國 FDA 高致敏無菌針劑查廠，承接歐美學名藥/新藥製造並代理多款美國原廠處方藥。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "西藥醫美代理 + CDMO + 嬰幼兒營養",
+        "note": "穩健通路現金流支撐集團對新藥開發與 CDMO 長線投資",
+        "items": [
+          { "name": "西藥處方、癌症藥與醫學美容", "pct": 55, "desc": "跨國原廠癌症、心血管與醫美注射劑亞太代理" },
+          { "name": "營養保健品 (卡洛塔妮等) 與 CDMO", "pct": 45, "desc": "東南亞高市占羊奶粉營養品牌及友杏無菌針劑代工" }
+        ]
+      }
+    },
+    {
+      "id": "4129",
+      "yahoo_symbol": "4129.TWO",
+      "name": "聯合",
+      "en_name": "United Orthopedic",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "medtech_ai",
+      "tagline": "上櫃人工關節龍頭！獲日本京瓷 (KYOCERA) 雙品牌策略合作並設美國總部直攻北美",
+      "featured": true,
+      "news_query": "\"聯合骨科\" OR \"聯合\" (4129 OR 京瓷 OR 美國 OR 日本 OR 人工關節) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "大戶籌碼集中＋科技集團參股題材：創辦人林延生家族與可耀等法人大戶持股集中（千張大戶約 49%），並有可成科技 (2474) 等科技背景投資人關注骨科醫材供應鏈。",
+        "investors": [
+          {
+            "name": "林延生創辦團隊 / 可耀 / 外資機構",
+            "ticker": "創辦團隊 & 外資",
+            "listed_status": "經營核心 + 外資約10%",
+            "pct": 10.5,
+            "pct_label": "外資 ~10.5% · 董監 ~9.5% (千張大戶 ~49%)",
+            "role": "核心經營權與機構持股",
+            "note": "亞洲極少數同時取得 FDA、CE、NMPA、PMDA 認證之骨科廠"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "美日雙引擎成長：在日本與京瓷 (KYOCERA) 採取雙品牌策略合作快速滲透醫院通路；於美國設立新總部擴大人工髖/膝關節市占。",
+        "partners": [
+          {
+            "country": "JP",
+            "partner": "日本京瓷株式會社 (KYOCERA, TSE: 6971)",
+            "coop_type": "日本雙品牌策略聯盟 + PMDA 認證",
+            "status": "商業放量中",
+            "detail": "與日本京瓷醫療部門採雙品牌戰略合作，借助京瓷在地通路讓聯合人工關節打入日本大型骨科醫院。"
+          },
+          {
+            "country": "US",
+            "partner": "美國直營新總部 / THINK Surgical 合作淵源",
+            "coop_type": "美國直營通路擴張 + FDA 產品線",
+            "status": "營收主力成長中",
+            "detail": "在美國設立全新營運與物流總部及醫師訓練中心，強化美國高毛利自有品牌髖關節與膝關節市占。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "人工關節植入物（歐美日多國認證）",
+        "note": "美國、歐洲與日本高毛利市場營收占比持續攀升",
+        "items": [
+          { "name": "人工髖關節與膝關節置換系統", "pct": 88, "desc": "從鍛造原料到 3D 列印植入物全製程自主化產品線" },
+          { "name": "骨科手術器械與代工/其他", "pct": 12, "desc": "配套手術工具與腫瘤客製關節解決方案" }
+        ]
+      }
+    },
+    {
+      "id": "4147",
+      "yahoo_symbol": "4147.TWO",
+      "name": "中裕",
+      "en_name": "TaiMed Biologics",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "new_drug_hub",
+      "tagline": "上櫃抗體新藥指標！國發基金(約14%)＋潤泰全(4.15%)投資，愛滋新藥獲美國 FDA 核准並授權北美",
+      "featured": false,
+      "news_query": "\"中裕\" (4147 OR Trogarzo OR Theratechnologies OR 潤泰 OR ADC) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "國發基金＋潤泰集團背書：行政院國發基金持股約 14% 任法人董事，上市公司潤泰全球 (2915) 等潤泰體系直接持有約 4.15%+。",
+        "investors": [
+          {
+            "name": "行政院國發基金",
+            "ticker": "官方戰略基金",
+            "listed_status": "國發基金董事持股",
+            "pct": 14.0,
+            "pct_label": "約 14.0%",
+            "role": "最大官方策略股東",
+            "note": "長期擔任法人董事支持抗體新藥研發與竹北蛋白廠"
+          },
+          {
+            "name": "潤泰集團 (潤泰全 2915 等)",
+            "ticker": "2915",
+            "listed_status": "上市集團轉投資",
+            "pct": 4.15,
+            "pct_label": "潤泰全直接約 4.15%+",
+            "role": "長期創始傳產金主",
+            "note": "潤泰尹衍樑體系一路參與中裕研發與商業化歷程"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": false,
+        "has_mou": false,
+        "summary": "美國商化實績指標：愛滋病抗體新藥 Trogarzo 獲美國 FDA 核准並長期獨家授權美加夥伴 Theratechnologies（2025 由美商收購後契約照常履約）。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "Theratechnologies (美商 Future Pak 收購體系) / 美國 FDA",
+            "coop_type": "美國 FDA 核准 + 美加獨家授權",
+            "status": "商業供貨穩定中",
+            "detail": "Trogarzo 於美國由 Theratechnologies 商業銷售，另自主推進長效抗愛滋雙抗 TMB-365/TMB-380 臨床與抗體偶聯 (ADC) 平台 CDMO。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "新藥供貨權利金 + 生物藥 CDMO",
+        "note": "除 Trogarzo 銷售分潤外，竹北 GMP 廠積極承接抗體與 ADC CDMO 專案",
+        "items": [
+          { "name": "Trogarzo 產品供貨與北美權利金", "pct": 70, "desc": "供應北美多重抗藥性 HIV 患者標準治療藥物" },
+          { "name": "生技 CDMO 與抗體新藥授權進展", "pct": 30, "desc": "長效型雙抗臨床與竹北細胞生物廠委託代工" }
+        ]
+      }
+    },
+    {
+      "id": "4174",
+      "yahoo_symbol": "4174.TWO",
+      "name": "浩鼎",
+      "en_name": "OBI Pharma",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "new_drug_hub",
+      "tagline": "上櫃 ADC 轉型先鋒！潤泰全直接持股 4.88% 等潤泰體系力挺，ADC 平台與 OBI-992 獲美國 FDA 肯定",
+      "featured": false,
+      "news_query": "\"浩鼎\" (4174 OR ADC OR OBI-992 OR HYProtecan OR FDA OR 潤泰) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "潤泰集團代表性投資：上市公司潤泰全球 (2915) 等潤泰體系長期為浩鼎核心法人金主（潤泰全直接持股約 4.88%，並含匯弘/宜泰等集團關聯法人）。",
+        "investors": [
+          {
+            "name": "潤泰集團 (潤泰全 2915 / 關聯投資)",
+            "ticker": "2915",
+            "listed_status": "上市集團轉投資",
+            "pct": 4.88,
+            "pct_label": "潤泰全直接 4.88% (含集團法人)",
+            "role": "創始核心傳產金主",
+            "note": "支持浩鼎轉型打造次世代 GlycOBI / HYProtecan ADC 技術平台"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": false,
+        "has_mou": false,
+        "summary": "全面轉攻美國 FDA 臨床標準之 ADC 抗體藥物複合體：核心組合物 HYProtecan 獲美國 FDA Type II DMF 登記核可，TROP2 ADC 新藥 OBI-992 獲胃癌孤兒藥與 FDA 臨床許可。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "美國 FDA (Type II DMF & OBI-992 臨床)",
+            "coop_type": "FDA DMF 登記 + 美台臨床 + 國際授權洽談",
+            "status": "FDA 臨床推進中",
+            "detail": "HYProtecan 完成美國 FDA Type II 藥品主檔案登記，OBI-992 (TROP2 ADC) 於美國展開一/二期臨床並積極尋求跨國 ADC 平台授權。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "ADC 技術平台與抗癌新藥研發",
+        "note": "鎖定連接子 (Linker) 與醣鍵結平台授權國際大廠",
+        "items": [
+          { "name": "GlycOBI / HYProtecan ADC 平台與 OBI-992", "pct": null, "tag": "美國 FDA 臨床研發", "desc": "以專有定點鍵結與連接子技術尋求跨國藥廠授權與共同開發" }
+        ]
+      }
+    },
+    {
+      "id": "6469",
+      "yahoo_symbol": "6469.TWO",
+      "name": "大樹",
+      "en_name": "Great Tree Pharmacy",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "specialty_api",
+      "tagline": "上櫃連鎖藥局龍頭！日本 SUGI（杉藥局）策略結盟並斥資 2.2 億私募入股，打造台日複合藥妝生態",
+      "featured": false,
+      "news_query": "\"大樹\" (6469 OR 杉藥局 OR SUGI OR 日本 OR 上櫃) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "日本上市藥妝龍頭跨國入股：日本第二大連鎖藥妝集團 SUGI Holdings（7649.T）斥資約新台幣 2.2 億元參與私募結盟，並與創辦劉玉騰/鄭明龍團隊共同擴張亞太。",
+        "investors": [
+          {
+            "name": "日本 SUGI Holdings (杉藥局 / 7649.T)",
+            "ticker": "JP 7649",
+            "listed_status": "日股上市策略私募入股",
+            "pct": null,
+            "pct_label": "斥資約 2.2 億參與私募結盟",
+            "role": "日本戰略零售金主與夥伴",
+            "note": "引進日本 SUGI 獨家美妝保養保健品並協助評估日本/亞太展店"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": false,
+        "has_jp": true,
+        "has_mou": true,
+        "summary": "台日醫藥零售聯盟代表：與日本 SUGI Holdings（杉藥局）簽署亞太發展合作協議並完成私募入股，引進 S SELECT 獨家品牌與銀髮照護藥局經營模式。",
+        "partners": [
+          {
+            "country": "JP",
+            "partner": "SUGI Holdings（日本杉藥局 / TSE: 7649）",
+            "coop_type": "亞太策略合作協議 + 私募入股 + 商品代理",
+            "status": "深度聯盟營運中",
+            "detail": "簽署亞太發展合作協議並在台開展日系藥妝複合店、獨家引進 S SELECT 產品線與跨國高齡照護經驗交流。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "台灣市占第一專業連鎖藥局",
+        "note": "處方箋、婦嬰與日系藥妝保健多元商品結構",
+        "items": [
+          { "name": "婦嬰產品與健康照護用品", "pct": 52, "desc": "高黏著度會員與銀髮輔具保健通路銷售" },
+          { "name": "處方調劑與指示/日系藥妝商品", "pct": 48, "desc": "健保慢性處方領藥及日本 SUGI 獨家引進保健美妝" }
+        ]
+      }
     }
   ]
 }

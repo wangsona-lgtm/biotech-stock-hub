@@ -13,7 +13,9 @@ window.BioAllianceGraph = (function () {
     EXT_FIN:     { x: 20, y: 486, w: 216, h: 60, col: 1, ext: true, market: "TW", name: "富邦金 / 台新金 / 潤泰", role: "金控傳產金主｜鑽石投資 & 泰福-KY" },
     EXT_UNI:      { x: 20, y: 558, w: 216, h: 60, col: 1, ext: true, market: "TW", name: "統一企業 (1216)", role: "轉投資神隆 41.6% / 葡萄王 8.0%" },
     EXT_QUANTA:   { x: 20, y: 630, w: 216, h: 60, col: 1, ext: true, market: "TW", name: "廣達電腦 (2382)", role: "AI巨頭法人董事｜入股長佳智能 2.7%" },
-    EXT_YUNGSHIN: { x: 20, y: 702, w: 216, h: 60, col: 1, ext: true, market: "TW", name: "永信 (3705) / 友華 (4120)", role: "永鴻50.02% / 仲恩8.63% / 安基大股東" },
+    EXT_YUNGSHIN: { x: 20, y: 702, w: 216, h: 60, col: 1, ext: true, market: "TW", name: "永信 (3705) / 杉藥局 (7649.T)", role: "永鴻50.02% / 日本SUGI私募入股大樹" },
+    EXT_QISDA:    { x: 20, y: 774, w: 216, h: 60, col: 1, ext: true, market: "TW", name: "佳世達 (2352) / 國發基金", role: "明基醫~55% / 中裕14% / 智擎15.5%" },
+    "4120":       { x: 20, y: 846, w: 216, h: 60, col: 1, role: "上櫃金主｜仲恩8.63% / 安基大股東" },
 
     // Col 2: 台灣被轉投資生技標的 - CDMO / 新藥 / 創投 (x = 336, w = 228)
     "6589": { x: 336, y: 50,  w: 228, h: 60, col: 2, role: "鴻海18.6% + 台耀6.1%｜日本PMDA" },
@@ -25,36 +27,41 @@ window.BioAllianceGraph = (function () {
     "6901": { x: 336, y: 482, w: 228, h: 60, col: 2, role: "中天25.3%/富邦29.6%/台新9.2%/潤泰" },
     "6535": { x: 336, y: 554, w: 228, h: 60, col: 2, role: "晟德35.5%｜美UNC CAR-T合作" },
     "4142": { x: 336, y: 626, w: 228, h: 60, col: 2, role: "國發11.3%｜美BD MOU / 日北里" },
-    "6945": { x: 336, y: 698, w: 228, h: 58, col: 2, role: "潤泰力挺逾3成｜雙特異性抗體" },
+    "6945": { x: 336, y: 698, w: 228, h: 58, col: 2, role: "上櫃｜潤泰力挺逾3成｜雙特異性抗體" },
     "6634": { x: 336, y: 766, w: 228, h: 58, col: 2, role: "興櫃｜鑽石投資9.39%｜MASH新藥" },
     "7729": { x: 336, y: 834, w: 228, h: 58, col: 2, role: "興櫃｜友華8.63%｜日本Kohjin MOU" },
+    "4147": { x: 336, y: 902, w: 228, h: 56, col: 2, role: "上櫃｜國發14%+潤泰4.15%｜美FDA藥證" },
+    "4174": { x: 336, y: 966, w: 228, h: 56, col: 2, role: "上櫃｜潤泰4.88%+｜ADC獲美FDA肯定" },
 
     // Col 3: 台灣醫材 / API / 直營新藥 / 興櫃黑馬 (x = 664, w = 228)
     "6446": { x: 664, y: 50,  w: 228, h: 56, col: 3, hub: true, role: "藥證直營雙冠｜美FDA + 日PMDA" },
     "1795": { x: 664, y: 116, w: 228, h: 56, col: 3, role: "Alvogen/PTT｜美併購 / 日PMDA" },
     "6712": { x: 664, y: 182, w: 228, h: 56, col: 3, role: "北美合資48.8%｜涵蓋美歐日專利" },
-    "6499": { x: 664, y: 248, w: 228, h: 56, col: 3, role: "晟德24.1%｜日Terumo / 美FDA廠" },
-    "6733": { x: 664, y: 314, w: 228, h: 56, col: 3, role: "晟德33.7%｜獨家授權日本藤本製藥" },
+    "6499": { x: 664, y: 248, w: 228, h: 56, col: 3, role: "上櫃｜晟德24.1%｜日Terumo / 美FDA廠" },
+    "6733": { x: 664, y: 314, w: 228, h: 56, col: 3, role: "上櫃｜晟德33.7%｜授權日本藤本製藥" },
     "1760": { x: 664, y: 380, w: 228, h: 56, col: 3, role: "班友18.4%｜日鳥居 / 美Akebia" },
     "6598": { x: 664, y: 446, w: 228, h: 56, col: 3, role: "美IDEXX / Henry Schein 90%美營收" },
     "1789": { x: 664, y: 512, w: 228, h: 56, col: 3, role: "統一41.6%｜設日本分公司 / 美FDA" },
     "1707": { x: 664, y: 578, w: 228, h: 56, col: 3, role: "統一8.0%｜7-ELEVEN通路 / 美原料獎" },
-    "6841": { x: 664, y: 644, w: 228, h: 56, col: 3, role: "廣達2.7%｜多項AI獲美國FDA核准" },
+    "6841": { x: 664, y: 644, w: 228, h: 56, col: 3, role: "上櫃｜廣達2.7%｜AI獲美國FDA核准" },
     "6936": { x: 664, y: 710, w: 228, h: 56, col: 3, role: "永信50.02%｜日本寵物藥 / 美外銷" },
     "6572": { x: 664, y: 776, w: 228, h: 56, col: 3, role: "興櫃｜日Denka 34.8% + 美DPT 11.8%" },
     "6696": { x: 664, y: 842, w: 228, h: 56, col: 3, role: "興櫃｜美FDA優先審查 / 日Sakigake" },
+    "4116": { x: 664, y: 906, w: 228, h: 56, col: 3, role: "上櫃｜佳世達~55%控股｜手術室醫材" },
+    "6469": { x: 664, y: 970, w: 228, h: 56, col: 3, role: "上櫃｜日SUGI杉藥局2.2億私募結盟" },
 
     // Col 4: 美國 & 日本合作夥伴 / MOU / 指標 (x = 994, w = 266)
     "^NBI":         { x: 994, y: 50,  w: 266, h: 60, col: 4, role: "美國那斯達克生技總指標" },
     HROW:           { x: 994, y: 128, w: 266, h: 60, col: 4, role: "美眼科夥伴｜授權台新藥 APP13007" },
     EXT_US_PARTNER: { x: 994, y: 206, w: 266, h: 72, col: 4, ext: true, market: "US", name: "🇺🇸 美國合作 & MOU 夥伴", role: "BD(MOU) / Sanofi / Sandoz / IDEXX / UNC" },
     EXT_JP_STRAT:   { x: 994, y: 296, w: 266, h: 72, col: 4, ext: true, market: "JP", name: "🇯🇵 日本策略入股 & MOU", role: "JCR(20.5%) / Alfresa / CMIC / Kohjin MOU" },
-    EXT_JP_LIC:     { x: 994, y: 386, w: 266, h: 72, col: 4, ext: true, market: "JP", name: "🇯🇵 日本藥廠授權商業化", role: "藤本製藥 / 鳥居製藥 / 養樂多 / Terumo" },
+    EXT_JP_LIC:     { x: 994, y: 386, w: 266, h: 72, col: 4, ext: true, market: "JP", name: "🇯🇵 日本藥廠授權商業化", role: "藤本製藥 / 鳥居 / 養樂多 / Maruho / 京瓷" },
     "4568.T":       { x: 994, y: 476, w: 266, h: 64, col: 4, role: "日本 ADC 霸主｜北里疫苗歷史合作" },
     "4502.T":       { x: 994, y: 558, w: 266, h: 64, col: 4, role: "日本最大藥廠｜美日雙樞紐指標" },
     "4519.T":       { x: 994, y: 640, w: 266, h: 60, col: 4, role: "羅氏控股60%｜日商轉投資典範" },
     "7754":         { x: 994, y: 716, w: 266, h: 58, col: 4, role: "興櫃｜友華+台杉｜美三期臨床AJ201" },
     "6876":         { x: 994, y: 786, w: 266, h: 58, col: 4, role: "興櫃｜美FDA IND(LXP103)推進" },
+    "4129":         { x: 994, y: 856, w: 266, h: 58, col: 4, role: "上櫃｜日本京瓷雙品牌 + 美國直營總部" },
   };
 
   // type: 'invest' (上市櫃金主轉投資/持股%), 'jp' (日本合作/MOU), 'us' (美國合作/MOU)
@@ -73,14 +80,19 @@ window.BioAllianceGraph = (function () {
     { from: "4123",        to: "6535", type: "invest", label: "晟德集團轉投資順藥約 34.5%~36.5%" },
     { from: "4123",        to: "6499", type: "invest", label: "晟德轉投資益安約 24.13%" },
     { from: "4123",        to: "6733", type: "invest", label: "晟德轉投資博晟生醫約 33.68%" },
-    { from: "EXT_UNI",      to: "1789", type: "invest", label: "統一企業 (1216) 直接37.94%、集團合計逾 41.5% 控股神隆", corridorY: 942 },
-    { from: "EXT_UNI",      to: "1707", type: "invest", label: "統一企業 (1216) 私募入股葡萄王 8.0%", corridorY: 952 },
-    { from: "EXT_QUANTA",   to: "6841", type: "invest", label: "廣達電腦 (2382) 轉投資長佳智能約 2.68% 任法人董事", corridorY: 962 },
+    { from: "EXT_UNI",      to: "1789", type: "invest", label: "統一企業 (1216) 直接37.94%、集團合計逾 41.5% 控股神隆", corridorY: 1072 },
+    { from: "EXT_UNI",      to: "1707", type: "invest", label: "統一企業 (1216) 私募入股葡萄王 8.0%", corridorY: 1082 },
+    { from: "EXT_QUANTA",   to: "6841", type: "invest", label: "廣達電腦 (2382) 轉投資長佳智能約 2.68% 任法人董事", corridorY: 1092 },
     { from: "EXT_FIN",      to: "6945", type: "invest", label: "潤泰集團 (2915/9945) 力挺圓祥生技，核心董事法人逾 30%" },
+    { from: "EXT_FIN",      to: "4147", type: "invest", label: "潤泰全 (2915) 持有上櫃中裕約 4.15%+，並列國發基金核心股東" },
+    { from: "EXT_FIN",      to: "4174", type: "invest", label: "潤泰全 (2915) 及集團法人持有上櫃浩鼎約 4.88%+" },
+    { from: "EXT_QISDA",    to: "4147", type: "invest", label: "國發基金持股上櫃中裕約 14.0% 任法人董事" },
+    { from: "EXT_QISDA",    to: "4116", type: "invest", label: "佳世達集團 (2352) 綜合持股上櫃明基醫約 55% 絕對控股", corridorY: 1102 },
     { from: "6901",         to: "6634", type: "invest", label: "鑽石投資 (6901) 轉投資欣耀 (6634) 約 9.39% 任法人董事" },
-    { from: "EXT_YUNGSHIN", to: "6936", type: "invest", label: "永信投控 (3705) 持股永鴻生技 50.02% 絕對控股" },
-    { from: "EXT_YUNGSHIN", to: "7729", type: "invest", label: "友華生技 (4120) 轉投資仲恩生醫約 8.63% 任法人董事" },
-    { from: "EXT_YUNGSHIN", to: "7754", type: "invest", label: "友華生技 (4120) 攜手台杉水牛二號共同投資安基生技", corridorY: 970 },
+    { from: "EXT_YUNGSHIN", to: "6936", type: "invest", label: "永信投控 (3705) 持股永鴻生技 50.02% 絕對控股", corridorY: 1062 },
+    { from: "EXT_YUNGSHIN", to: "6469", type: "invest", label: "日本杉藥局 (SUGI) 斥資 2.2 億私募策略入股大樹 (6469)", corridorY: 1110 },
+    { from: "4120",         to: "7729", type: "invest", label: "上櫃友華生技 (4120) 轉投資仲恩生醫約 8.63% 任法人董事" },
+    { from: "4120",         to: "7754", type: "invest", label: "上櫃友華生技 (4120) 攜手台杉水牛二號共同投資安基生技", corridorY: 1054 },
 
     // 日本合作 & MOU
     { from: "4726", to: "EXT_JP_STRAT", type: "jp", label: "日本 JCR 策略入股 20.48% + Alfresa 合資秋田廠 + Sartorius MOU" },
@@ -95,11 +107,14 @@ window.BioAllianceGraph = (function () {
     { from: "6446", to: "EXT_JP_LIC",   type: "jp", label: "Ropeg 取得日本 PMDA PV 與 ET 全線適應症藥證直營" },
     { from: "1795", to: "EXT_JP_LIC",   type: "jp", label: "血癌藥 Pomalidomide 取得日本 PMDA 核准上市" },
     { from: "6838", to: "EXT_JP_LIC",   type: "jp", label: "併購日本船橋 Activus Pharma 取得 APNT 奈米平台" },
-    { from: "4142", to: "4568.T",       type: "jp", label: "與日本北里第一三共具疫苗技術引進合作淵源", corridorY: 932 },
+    { from: "4142", to: "4568.T",       type: "jp", label: "與日本北里第一三共具疫苗技術引進合作淵源", corridorY: 1044 },
     { from: "7729", to: "EXT_JP_STRAT", type: "jp", label: "興櫃仲恩生醫與日本 Kohjin Bio 簽署細胞培養基合作 MOU" },
     { from: "6572", to: "EXT_JP_STRAT", type: "jp", label: "興櫃博錸獲日商 Denka (4061.T) 入股 34.84% 共同開發試劑" },
     { from: "6696", to: "EXT_JP_LIC",   type: "jp", label: "興櫃仁新 LBS-008 獲日本先驅藥品認定 (Sakigake) 送件 NDA" },
     { from: "6936", to: "EXT_JP_LIC",   type: "jp", label: "永鴻生技推進日本寵物治療藥物 BE 試驗與日本取證" },
+    { from: "4120", to: "EXT_JP_LIC",   type: "jp", label: "上櫃友華與日本 Maruho 合作經銷多汗症等專科用藥", corridorY: 1036 },
+    { from: "6469", to: "EXT_JP_STRAT", type: "jp", label: "上櫃大樹與日本杉藥局 (SUGI) 簽亞太協議並私募結盟" },
+    { from: "4129", to: "EXT_JP_LIC",   type: "jp", label: "上櫃聯合與日本京瓷 (KYOCERA) 採取人工關節雙品牌戰略合作" },
 
     // 美國合作 & MOU
     { from: "6838", to: "HROW",           type: "us", label: "APP13007 美國獨家商業化授權 NASDAQ 上市眼科夥伴 Harrow" },
@@ -116,14 +131,21 @@ window.BioAllianceGraph = (function () {
     { from: "6841", to: "EXT_US_PARTNER", type: "us", label: "多項醫療 AI 獲美國 FDA 許可並與 Microsoft / AWS 雲端合作" },
     { from: "6696", to: "EXT_US_PARTNER", type: "us", label: "興櫃仁新持股美股 Belite Bio 42.37%，LBS-008 獲 FDA 優先審查" },
     { from: "6634", to: "EXT_US_PARTNER", type: "us", label: "興櫃欣耀 MASH 新藥 SNP-6 推進美國臨床與國際授權洽談" },
+    { from: "4147", to: "EXT_US_PARTNER", type: "us", label: "上櫃中裕愛滋抗體 Trogarzo 獲 FDA 核准授權 Theratechnologies" },
+    { from: "4174", to: "EXT_US_PARTNER", type: "us", label: "上櫃浩鼎 HYProtecan 獲美 FDA DMF 登記核可，OBI-992 美臨床中" },
+    { from: "4129", to: "EXT_US_PARTNER", type: "us", label: "上櫃聯合於美國設立營運總部直攻北美高毛利人工關節市場" },
     { from: "6446", to: "^NBI",           type: "us", label: "台灣新藥國際市值指標對標那斯達克生技指數" },
   ];
 
   const PRESETS = {
     all:    { label: "全景金主與美日聯盟", filterFn: () => true },
+    tpex:   {
+      label: "📈 上櫃金主與美日聯隊",
+      ids: new Set(["EXT_QISDA", "EXT_FIN", "4123", "4105", "4128", "EXT_QUANTA", "EXT_YUNGSHIN", "4120", "4726", "4162", "4743", "6535", "6945", "4147", "4174", "6499", "6733", "6841", "4116", "6469", "4129", "EXT_US_PARTNER", "EXT_JP_STRAT", "EXT_JP_LIC"]),
+    },
     esb:    {
-      label: "🌱 興櫃與轉掛牌新星",
-      ids: new Set(["EXT_YUNGSHIN", "6901", "EXT_FIN", "EXT_JP_STRAT", "EXT_JP_LIC", "EXT_US_PARTNER", "6634", "7729", "6572", "6696", "7754", "6876", "6945", "6936"]),
+      label: "🌱 興櫃潛力新星",
+      ids: new Set(["4120", "6901", "EXT_JP_STRAT", "EXT_JP_LIC", "EXT_US_PARTNER", "6634", "7729", "6572", "6696", "7754", "6876"]),
     },
     invest: { label: "🏦 上市櫃金主轉投資鏈", filterFn: (e) => e.type === "invest" },
     jp_mou: { label: "🇯🇵 日本合作・入股・MOU", filterFn: (e) => e.type === "jp" },
@@ -249,7 +271,7 @@ window.BioAllianceGraph = (function () {
     };
 
     let svg = `
-      <svg class="supply-svg" viewBox="0 0 1280 990" role="img" aria-label="台美日生技金主轉投資與美日合作聯盟圖">
+      <svg class="supply-svg" viewBox="0 0 1280 1125" role="img" aria-label="台美日生技金主轉投資與美日合作聯盟圖">
         <defs>
           <marker id="arrow-invest" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
             <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#fbbf24" />
@@ -262,14 +284,14 @@ window.BioAllianceGraph = (function () {
           </marker>
         </defs>
 
-        <rect x="10"  y="40" width="236" height="884" rx="14" fill="rgba(15,23,42,0.44)" stroke="rgba(251,191,36,0.18)" />
-        <rect x="326" y="40" width="248" height="884" rx="14" fill="rgba(15,23,42,0.50)" stroke="rgba(56,189,248,0.20)" />
-        <rect x="654" y="40" width="248" height="884" rx="14" fill="rgba(15,23,42,0.44)" stroke="rgba(56,189,248,0.16)" />
-        <rect x="982" y="40" width="288" height="884" rx="14" fill="rgba(15,23,42,0.44)" stroke="rgba(244,114,182,0.20)" />
+        <rect x="10"  y="40" width="236" height="992" rx="14" fill="rgba(15,23,42,0.44)" stroke="rgba(251,191,36,0.18)" />
+        <rect x="326" y="40" width="248" height="992" rx="14" fill="rgba(15,23,42,0.50)" stroke="rgba(56,189,248,0.20)" />
+        <rect x="654" y="40" width="248" height="992" rx="14" fill="rgba(15,23,42,0.44)" stroke="rgba(56,189,248,0.16)" />
+        <rect x="982" y="40" width="288" height="992" rx="14" fill="rgba(15,23,42,0.44)" stroke="rgba(244,114,182,0.20)" />
     `;
 
     colHeaders.forEach((h) => {
-      svg += `<text x="${h.x}" y="916" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="700" font-family="Inter, Noto Sans TC, sans-serif">${h.title}</text>`;
+      svg += `<text x="${h.x}" y="1024" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="700" font-family="Inter, Noto Sans TC, sans-serif">${h.title}</text>`;
     });
 
     const orderedEdges = [
