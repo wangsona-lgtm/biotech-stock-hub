@@ -62,6 +62,7 @@ window.BioAllianceGraph = (function () {
     "7754":         { x: 994, y: 716, w: 266, h: 58, col: 4, role: "興櫃｜友華+台杉｜美三期臨床AJ201" },
     "6876":         { x: 994, y: 786, w: 266, h: 58, col: 4, role: "興櫃｜美FDA IND(LXP103)推進" },
     "4129":         { x: 994, y: 856, w: 266, h: 58, col: 4, role: "上櫃｜日本京瓷雙品牌 + 美國直營總部" },
+    "6892":         { x: 994, y: 924, w: 266, h: 58, col: 4, role: "興櫃｜日本三井1.5% + 美梅約LOI/Terumo" },
   };
 
   // type: 'invest' (上市櫃金主轉投資/持股%), 'jp' (日本合作/MOU), 'us' (美國合作/MOU)
@@ -115,6 +116,7 @@ window.BioAllianceGraph = (function () {
     { from: "4120", to: "EXT_JP_LIC",   type: "jp", label: "上櫃友華與日本 Maruho 合作經銷多汗症等專科用藥", corridorY: 1036 },
     { from: "6469", to: "EXT_JP_STRAT", type: "jp", label: "上櫃大樹與日本杉藥局 (SUGI) 簽亞太協議並私募結盟" },
     { from: "4129", to: "EXT_JP_LIC",   type: "jp", label: "上櫃聯合與日本京瓷 (KYOCERA) 採取人工關節雙品牌戰略合作" },
+    { from: "6892", to: "EXT_JP_STRAT", type: "jp", label: "興櫃台寶生醫獲日本三井金屬私募入股 1.5%，並與 Terumo BCT 合作" },
 
     // 美國合作 & MOU
     { from: "6838", to: "HROW",           type: "us", label: "APP13007 美國獨家商業化授權 NASDAQ 上市眼科夥伴 Harrow" },
@@ -134,6 +136,7 @@ window.BioAllianceGraph = (function () {
     { from: "4147", to: "EXT_US_PARTNER", type: "us", label: "上櫃中裕愛滋抗體 Trogarzo 獲 FDA 核准授權 Theratechnologies" },
     { from: "4174", to: "EXT_US_PARTNER", type: "us", label: "上櫃浩鼎 HYProtecan 獲美 FDA DMF 登記核可，OBI-992 美臨床中" },
     { from: "4129", to: "EXT_US_PARTNER", type: "us", label: "上櫃聯合於美國設立營運總部直攻北美高毛利人工關節市場" },
+    { from: "6892", to: "EXT_US_PARTNER", type: "us", label: "興櫃台寶與美國梅約醫學中心簽署 LOI 並合作哈佛醫學院 Treg 療法" },
     { from: "6446", to: "^NBI",           type: "us", label: "台灣新藥國際市值指標對標那斯達克生技指數" },
   ];
 
@@ -145,7 +148,7 @@ window.BioAllianceGraph = (function () {
     },
     esb:    {
       label: "🌱 興櫃潛力新星",
-      ids: new Set(["4120", "6901", "EXT_JP_STRAT", "EXT_JP_LIC", "EXT_US_PARTNER", "6634", "7729", "6572", "6696", "7754", "6876"]),
+      ids: new Set(["4120", "6901", "EXT_JP_STRAT", "EXT_JP_LIC", "EXT_US_PARTNER", "6634", "7729", "6572", "6696", "7754", "6876", "6892"]),
     },
     invest: { label: "🏦 上市櫃金主轉投資鏈", filterFn: (e) => e.type === "invest" },
     jp_mou: { label: "🇯🇵 日本合作・入股・MOU", filterFn: (e) => e.type === "jp" },

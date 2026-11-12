@@ -2749,6 +2749,84 @@
           { "name": "處方調劑與指示/日系藥妝商品", "pct": 48, "desc": "健保慢性處方領藥及日本 SUGI 獨家引進保健美妝" }
         ]
       }
+    },
+    {
+      "id": "6892",
+      "yahoo_symbol": "6892.TWO",
+      "name": "台寶生醫",
+      "en_name": "Taiwan Bio Therapeutics",
+      "market": "TW",
+      "exchange": "ESB",
+      "currency": "TWD",
+      "segment": "esb_biotech",
+      "tagline": "興櫃細胞治療指標！日本三井金屬入股 1.5% ＋ 聯電宏誠/國泰創投支持，簽約美國梅約醫學中心 LOI",
+      "featured": true,
+      "news_query": "\"台寶生醫\" (6892 OR 梅約 OR 三井金屬 OR Treg OR 細胞治療 OR 泰爾茂) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "上市科技金控創投＋日美醫療大咖齊聚：獲聯電集團宏誠創投、國泰創投、工研院 ITIC、富聿資本與福又達入股；更獲日本三井金屬私募入股約 1.5%，美國子公司 Singulera 獲美國梅約醫學中心技術作價入股。",
+        "investors": [
+          {
+            "name": "日本三井金屬 (Mitsui Kinzoku / 5706.T)",
+            "ticker": "JP 5706",
+            "listed_status": "日股上市策略私募入股",
+            "pct": 1.5,
+            "pct_label": "私募入股約 1.5%",
+            "role": "日本再生醫療戰略夥伴",
+            "note": "共同開拓日本及全球自動化細胞治療與再生醫療版圖"
+          },
+          {
+            "name": "聯電集團宏誠創投 / 國泰創投 / 工研院 ITIC",
+            "ticker": "2303 / 2882 / ITIC",
+            "listed_status": "上市科技與金控創投參股",
+            "pct": null,
+            "pct_label": "五大策略創投聯合現增入股",
+            "role": "跨界科技金融策略股東",
+            "note": "同梯涵蓋倍利生技創投、福友私募股權與富聿資本、福又達生技"
+          },
+          {
+            "name": "美國梅約醫學中心 (Mayo Clinic)",
+            "ticker": "US Subsidiary JV",
+            "listed_status": "美國頂尖醫學中心作價入股",
+            "pct": null,
+            "pct_label": "技術作價入股美國子公司 Singulera",
+            "role": "美國臨床與技術共創夥伴",
+            "note": "全資併購美商 TRACT 整併為 Singulera 取得次世代 Treg 細胞療法完整專利"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": true,
+        "summary": "美日雙線重磅國際結盟：與美國梅約醫學中心簽署 LOI 打造鳳凰城自動化細胞基地並攜手哈佛醫學院研發；與日本三井金屬入股結盟並聯手 Terumo BCT 推進 Quantum Flex 自動化 Treg 製程。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "梅約醫學中心 (Mayo Clinic) / 哈佛醫學院 BWH",
+            "coop_type": "簽署 LOI 意向書 + 美國子公司合作 + 共同研發",
+            "status": "簽署 LOI / 臨床推進中",
+            "detail": "與梅約醫學中心簽署合作意向書 (LOI) 於美國鳳凰城打造「針到針」自動化細胞製造園區；並與哈佛醫學院布萊根婦女醫院延續基因修飾 Treg 自體免疫療法合作。"
+          },
+          {
+            "country": "JP",
+            "partner": "日本三井金屬 (5706.T) / 泰爾茂比司特 (Terumo BCT)",
+            "coop_type": "私募策略入股 + 自動化細胞製程合作",
+            "status": "深度執行中",
+            "detail": "吸引三井金屬私募投資約 1.5%；並與泰爾茂比司特 (Terumo BCT) 合作導入 Quantum Flex 封閉式自動化系統，大幅降低 Treg 細胞製造成本與人工瓶頸。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "基因修飾 Treg 新藥 + 細胞醫療 CDMO",
+        "note": "透過美國 Singulera 原研管線與台灣自動化細胞代工雙引擎創造價值",
+        "items": [
+          { "name": "次世代調節型 T 細胞 (Treg) 創新療法", "pct": null, "tag": "美日法規臨床推進", "desc": "鎖定器官移植免疫耐受與自體免疫疾病之基因修飾細胞新藥" },
+          { "name": "細胞治療 CDMO 與自動化製程服務", "pct": null, "tag": "商業化營收引擎", "desc": "承接國內外生技廠基因/細胞治療製程開發與 GMP 製備代工" }
+        ]
+      }
     }
   ]
 }
