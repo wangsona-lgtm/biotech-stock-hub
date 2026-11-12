@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIO·PULSE 生技股票分析終端｜上市櫃金主轉投資・美日合作 MOU・技術線圖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M7 3c0 4.5 10 4.5 10 9s-10 4.5-10 9" stroke="#38bdf8" stroke-width="1.9" stroke-linecap="round"/>
+            <path d="M17 3c0 4.5-10 4.5-10 9s10 4.5 10 9" stroke="#818cf8" stroke-width="1.9" stroke-linecap="round"/>
+            <path d="M8.5 6.5h7M9 12h6M8.5 17.5h7" stroke="#00d084" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-title">BIO·PULSE <span class="accent">台美日生技股情與金主聯盟終端</span></div>
+          <div class="brand-sub">上市櫃金主轉投資比例 × 美日合作 MOU 備忘錄 × 技術線圖・每日自動更新</div>
+        </div>
+      </div>
+
+      <div class="topbar-meta">
+        <span class="pill-tag pill-convention">
+          <span style="color:var(--up);font-weight:800">▲紅漲</span> / <span style="color:var(--down);font-weight:800">▼綠跌</span>
+        </span>
+        <span class="pill-tag">
+          <span class="dot"></span>
+          <span id="dataDateLabel" class="mono">資料載入中...</span>
+        </span>
+        <div class="search-box">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <input type="text" id="globalSearch" placeholder="搜尋代號/名稱/金主/夥伴 (6589, 鴻海, JCR)" aria-label="搜尋生技股票與合作夥伴">
+        </div>
+        <button class="btn" id="refreshDataBtn" title="從伺服器重新載入最新盤後 JSON 資料">
+          ↻ 更新檢查
+        </button>
+        <button class="btn btn-primary" id="exportCsvBtn" title="下載含金主轉投資與美日合作欄位的 CSV">
+          匯出 CSV
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 焦點行情跑馬燈列 -->
+    <section class="ticker-strip" id="tickerStrip" aria-label="焦點生技標的"></section>
+
+    <!-- 市場脈搏 KPI 卡 -->
+    <section class="kpi-grid" id="kpiGrid"></section>
+
+    <!-- 五大分析工作區分頁 -->
+    <nav class="nav-tabs" aria-label="分析功能分頁">
+      <button class="nav-tab active" data-tab="terminal">📊 個股技術與金主終端</button>
+      <button class="nav-tab" data-tab="supply">🏦 金主轉投資與美日聯盟圖</button>
+      <button class="nav-tab" data-tab="financials">📑 2025 財報與估值趨勢</button>
+      <button class="nav-tab" data-tab="compare">⚡ 多股對比與排行</button>
+      <button class="nav-tab" data-tab="pipeline">⚙️ 自選與建站 SOP</button>
+    </nav>
+
+    <!-- 分頁 1：個股技術分析與金主/美日合作終端 -->
+    <section class="tab-panel active" id="tab-terminal">
+      <div class="terminal-layout">
+        <!-- 左側選股清單 -->
+        <aside class="stock-sidebar">
+          <div class="sidebar-filter-row" id="sidebarFilters"></div>
+          <div id="stockSidebarList"></div>
+        </aside>
+
+        <!-- 右側分析主畫面 -->
+        <div class="terminal-main">
+          <div class="card" id="stockHeroWrap">
+            <div style="padding:30px;text-align:center;color:var(--text-muted)">正在載入生技行情與金主轉投資資料...</div>
+          </div>
+
+          <!-- 金主爸爸轉投資比例 & 美日合作 MOU 雙核心卡片 -->
+          <div class="diag-grid">
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">🏦 上市櫃「金主爸爸」轉投資與持股比例</div>
+                <span id="backerBadgeArea"></span>
+              </div>
+              <div id="capitalBackersCard"></div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">🌏 美國・日本合作 / MOU 備忘錄 / 授權</div>
+                <span id="intlBadgeArea"></span>
+              </div>
+              <div id="intlCoopCard"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="chart-toolbar">
+              <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+                <div class="btn-group" role="group" aria-label="圖表型態">
+                  <button class="tool-btn chart-mode-btn active" data-mode="candle">K 線圖</button>
+                  <button class="tool-btn chart-mode-btn" data-mode="area">收盤趨勢</button>
+                </div>
+                <div class="btn-group" role="group" aria-label="時間區間">
+                  <button class="tool-btn chart-range-btn" data-range="1M">1M</button>
+                  <button class="tool-btn chart-range-btn active" data-range="3M">3M</button>
+                  <button class="tool-btn chart-range-btn" data-range="6M">6M</button>
+                  <button class="tool-btn chart-range-btn" data-range="1Y">1Y</button>
+                  <button class="tool-btn chart-range-btn" data-range="FROM_2025">2025起</button>
+                  <button class="tool-btn chart-range-btn" data-range="2Y">2Y</button>
+                </div>
+              </div>
+
+              <div class="overlay-checks">
+                <label class="chk-chip"><input type="checkbox" id="chkMa5"><span class="swatch" style="background:#fbbf24"></span>MA5</label>
+                <label class="chk-chip"><input type="checkbox" id="chkMa20"><span class="swatch" style="background:#38bdf8"></span>MA20</label>
+                <label class="chk-chip"><input type="checkbox" id="chkMa60"><span class="swatch" style="background:#a78bfa"></span>MA60</label>
+                <label class="chk-chip"><input type="checkbox" id="chkMa200"><span class="swatch" style="background:#2dd4bf"></span>MA200</label>
+                <label class="chk-chip"><input type="checkbox" id="chkBB"><span class="swatch" style="background:#818cf8"></span>布林通道</label>
+              </div>
+
+              <div class="btn-group" role="group" aria-label="副圖技術指標">
+                <button class="tool-btn sub-type-btn active" data-sub="volume">成交量</button>
+                <button class="tool-btn sub-type-btn" data-sub="rsi">RSI(14)</button>
+                <button class="tool-btn sub-type-btn" data-sub="macd">MACD</button>
+              </div>
+            </div>
+
+            <div class="chart-canvas-box">
+              <div class="chart-hud" id="terminalHud"></div>
+              <canvas id="terminalCanvas" class="chart-canvas"></canvas>
+            </div>
+          </div>
+
+          <div class="diag-grid">
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">🧭 技術指標自動判讀</div>
+                <span style="font-size:0.72rem;color:var(--text-dim)">依據收盤、均線、RSI 與 MACD 即時運算</span>
+              </div>
+              <div class="signal-list" id="signalList"></div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">📐 區間報酬與風險數據</div>
+                <span style="font-size:0.72rem;color:var(--text-dim)">年化波動率 / 相對 ^NBI 超額</span>
+              </div>
+              <div class="ret-grid" id="returnStatsGrid"></div>
+            </div>
+          </div>
+
+          <div class="diag-grid">
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">🧬 個股營收來源與研發管線結構</div>
+                <span id="revMixBasis" style="font-size:0.72rem;color:var(--cyan)"></span>
+              </div>
+              <div id="revenueMixCard"></div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">📰 個股最新生技財經新聞</div>
+                <span style="font-size:0.72rem;color:var(--text-dim)">每日自動抓取 FDA / 授權 / 財報新聞</span>
+              </div>
+              <div class="news-list" id="stockNewsCard"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 分頁 2：金主轉投資與美日合作總覽矩陣 -->
+    <section class="tab-panel" id="tab-supply">
+      <div class="card" style="margin-bottom:16px">
+        <div class="card-header">
+          <div class="card-title">🕸️ 上市櫃「金主爸爸」轉投資 × 美日合作 MOU 互動關係圖</div>
+          <span style="font-size:0.75rem;color:var(--text-dim)">涵蓋台灣金主(鴻海/統一/廣達/富邦/台新/潤泰/晟德/台耀/東洋/中天) × 美國 × 日本夥伴｜點擊節點鎖定關聯</span>
+        </div>
+        <div id="supplyGraphWrap"></div>
+        <div class="sg-inspector" id="supplyGraphInspector"></div>
+      </div>
+
+      <div class="card" style="margin-bottom:16px">
+        <div class="card-header">
+          <div class="card-title">📋 生技股「金主爸爸轉投資比例 × 美日合作 MOU」總表（點擊欄位可排序）</div>
+          <div class="sidebar-filter-row" id="tableSegmentFilters" style="margin-bottom:0"></div>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="fundamentalsTable">
+            <thead>
+              <tr>
+                <th data-sort="id">標的名稱 / 代號</th>
+                <th>產業分類</th>
+                <th data-sort="close">最新收盤</th>
+                <th data-sort="ret_1d">單日 %</th>
+                <th data-sort="ret_20d">20日 %</th>
+                <th data-sort="backer_pct">上市櫃金主爸爸 (轉投資比例)</th>
+                <th data-sort="has_jp">🇯🇵 日本合作 / MOU</th>
+                <th data-sort="has_us">🇺🇸 美國合作 / MOU</th>
+                <th data-sort="pb">淨值比 P/B</th>
+                <th data-sort="pe">本益比 P/E</th>
+                <th data-sort="rsi14">RSI(14)</th>
+              </tr>
+            </thead>
+            <tbody id="fundamentalsTbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="pipeline-flow" id="pipelineFlow"></div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">🎯 估值倍數 × 近 20 日動能四象限分佈圖</div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+            <div class="btn-group">
+              <button class="tool-btn scatter-mode-btn active" data-smode="pb">P/B 淨值比 (全族群)</button>
+              <button class="tool-btn scatter-mode-btn" data-smode="pe">P/E 本益比 (獲利股)</button>
+            </div>
+            <div id="scatterInfo" style="font-size:0.78rem;color:var(--text-muted)">將滑鼠移至圓點檢視估值明細（青藍＝台股、紫色＝美股、粉紅＝日股）</div>
+          </div>
+        </div>
+        <div class="chart-canvas-box">
+          <canvas id="scatterCanvas" class="chart-canvas"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- 分頁 3：2025 至今財報與估值趨勢 -->
+    <section class="tab-panel" id="tab-financials">
+      <div class="card" style="margin-bottom:16px">
+        <div class="card-header">
+          <div class="card-title">📑 2025 至今季度財報趨勢分析（營收・三率・自由現金流・資本支出）</div>
+          <span style="font-size:0.75rem;color:var(--text-dim)">點選任一生技個股查看各季財報趨勢，並與同業及美日藥廠對比</span>
+        </div>
+        <div class="compare-controls" id="finStockSelector"></div>
+        <div id="finHeroWrap"></div>
+        <div id="finRevenueMixBox" style="margin-top:14px"></div>
+      </div>
+
+      <div class="fin-charts-grid">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">📊 單季營收 × 營業利益 × 淨利趨勢</div>
+            <div class="fin-legend">
+              <span><i class="swatch" style="background:#38bdf8"></i> 營收</span>
+              <span><i class="swatch" style="background:#818cf8"></i> 營業利益</span>
+              <span><i class="swatch" style="background:#f472b6"></i> 淨利</span>
+            </div>
+          </div>
+          <div class="chart-canvas-box">
+            <div class="chart-hud" id="finRevHud"></div>
+            <canvas id="finRevCanvas" class="chart-canvas"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">📈 毛利率 / 營業利益率 / 淨利率 三率走勢</div>
+            <div class="fin-legend">
+              <span><i class="swatch" style="background:#fbbf24"></i> 毛利率</span>
+              <span><i class="swatch" style="background:#38bdf8"></i> 營益率</span>
+              <span><i class="swatch" style="background:#f472b6"></i> 淨利率</span>
+            </div>
+          </div>
+          <div class="chart-canvas-box">
+            <div class="chart-hud" id="finMarginHud"></div>
+            <canvas id="finMarginCanvas" class="chart-canvas"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🏭 營業現金流 vs 資本支出 (CapEx) vs FCF</div>
+            <div class="fin-legend">
+              <span><i class="swatch" style="background:#38bdf8"></i> 營業現金流</span>
+              <span><i class="swatch" style="background:#fbbf24"></i> CapEx</span>
+              <span><i class="swatch" style="background:#00d084"></i> FCF</span>
+            </div>
+          </div>
+          <div class="chart-canvas-box">
+            <div class="chart-hud" id="finCfHud"></div>
+            <canvas id="finCfCanvas" class="chart-canvas"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:16px">
+        <div class="card-header">
+          <div class="card-title" id="finTableTitle">📋 季度財報明細表</div>
+          <span style="font-size:0.74rem;color:var(--text-dim)" id="finCurrencyNote"></span>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>季度</th>
+                <th>結算日</th>
+                <th>單季營收</th>
+                <th>季增 QoQ</th>
+                <th>毛利</th>
+                <th>毛利率</th>
+                <th>營業利益</th>
+                <th>營益率</th>
+                <th>淨利</th>
+                <th>稀釋 EPS</th>
+                <th>資本支出 CapEx</th>
+                <th>自由現金流 FCF</th>
+                <th>CapEx/營收</th>
+              </tr>
+            </thead>
+            <tbody id="finQuartersTbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">⚖️ 台美日生技同業估值與獲利品質矩陣</div>
+          <div class="sidebar-filter-row" id="peerSegmentFilters" style="margin-bottom:0"></div>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="peerMatrixTable">
+            <thead>
+              <tr>
+                <th data-psort="id">標的 / 地區</th>
+                <th data-psort="mcap">市值</th>
+                <th data-psort="pb">P/B</th>
+                <th data-psort="pe">Trailing P/E</th>
+                <th data-psort="fpe">Forward P/E</th>
+                <th data-psort="ps">P/S</th>
+                <th data-psort="gm">毛利率</th>
+                <th data-psort="om">營益率</th>
+                <th data-psort="rev_g">營收年增</th>
+                <th data-psort="vs_nbi_3m">相對NBI(3M)</th>
+                <th data-psort="earnings_date">下次財報日</th>
+              </tr>
+            </thead>
+            <tbody id="peerMatrixTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 分頁 4：多股走勢對比與強弱排行 -->
+    <section class="tab-panel" id="tab-compare">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">⚡ 多股相對強弱走勢對比（Base-100 累積報酬率 %）</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+            <div class="btn-group">
+              <button class="tool-btn preset-btn" data-preset="cdmo_all">CDMO 四雄</button>
+              <button class="tool-btn preset-btn" data-preset="backers">生技金主母艦</button>
+              <button class="tool-btn preset-btn" data-preset="new_drug">新藥 FDA/PMDA</button>
+              <button class="tool-btn preset-btn" data-preset="jp_alliance">日本策略聯盟</button>
+              <button class="tool-btn preset-btn" data-preset="us_alliance">美國通路授權</button>
+              <button class="tool-btn preset-btn" data-preset="global_bio">美日指標藥廠</button>
+            </div>
+            <div class="btn-group">
+              <button class="tool-btn cmp-range-btn" data-range="1M">1M</button>
+              <button class="tool-btn cmp-range-btn active" data-range="3M">3M</button>
+              <button class="tool-btn cmp-range-btn" data-range="6M">6M</button>
+              <button class="tool-btn cmp-range-btn" data-range="1Y">1Y</button>
+              <button class="tool-btn cmp-range-btn" data-range="FROM_2025">2025起</button>
+              <button class="tool-btn cmp-range-btn" data-range="2Y">2Y</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="compare-controls" id="compareChips"></div>
+        <div class="chart-canvas-box">
+          <div class="chart-hud" id="compareHud"></div>
+          <canvas id="compareCanvas" class="chart-canvas"></canvas>
+        </div>
+      </div>
+
+      <div class="leaderboard-grid" id="leaderboardGrid"></div>
+    </section>
+
+    <!-- 分頁 5：自選股、自動更新與建站 SOP -->
+    <section class="tab-panel" id="tab-pipeline">
+      <div class="arch-grid">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">★ 我的生技自選清單</div>
+            <span style="font-size:0.75rem;color:var(--text-dim)">自動記憶於本機瀏覽器</span>
+          </div>
+          <div id="watchlistCards"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🤖 零後端建站 SOP 與 GitHub Actions 自動排程</div>
+          </div>
+          <p style="font-size:0.83rem;color:var(--text-muted);margin-bottom:10px">
+            本架構採用「零後端靜態網站 + Python 自動化資料管線 + GitHub Actions 定時部署」，每日於台灣時間
+            <strong style="color:var(--cyan)">06:30</strong>（美股收盤後）、<strong style="color:var(--cyan)">16:00 / 18:00</strong>（台股盤後與估值公布後）自動執行
+            <code class="mono" style="color:var(--cyan)">scripts/fetch_stocks.py</code> 並重新部署 GitHub Pages。
+          </p>
+          <div id="updateStatusBox" style="margin-bottom:12px;padding:10px 12px;border-radius:10px;background:rgba(15,23,42,0.7);border:1px solid var(--border);font-size:0.8rem"></div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+            <button class="btn btn-primary" id="pipelineRefreshBtn">↻ 重新讀取最新資料</button>
+          </div>
+          <div class="sop-list">
+            <div class="sop-step"><strong>Step 1｜定義標的與金主/美日合作圖譜：</strong>編輯 <code class="mono">config/stocks_config.json</code>，填入代號、<code class="mono">capital_backers</code>（上市櫃金主與持股%）及 <code class="mono">intl_coop</code>（美日合作與 MOU）。</div>
+            <div class="sop-step"><strong>Step 2｜Python 管線抓價算指標：</strong>執行 <code class="mono">python scripts/fetch_stocks.py</code>，自動向 TWSE、TPEx、Yahoo Finance 與 Google News RSS 抓取行情/財報/新聞，輸出 <code class="mono">data/stocks.json</code> 與 <code class="mono">data/stocks.js</code>。</div>
+            <div class="sop-step"><strong>Step 3｜推送 GitHub 並開啟 Pages：</strong>建立 Repo 推送至 <code class="mono">main</code> 分支，至 Settings → Pages 將 Source 設為 <strong>GitHub Actions</strong>，並開啟 Workflow 讀寫權限（Read and write permissions）。</div>
+            <div class="sop-step"><strong>Step 4｜全自動免維運上線：</strong>由 <code class="mono">.github/workflows/update-data.yml</code> 每日三時段自動抓資料、Commit 並部署上線（亦可點 Run workflow 手動觸發）。</div>
+          </div>
+          <div style="font-size:0.8rem;font-weight:700;margin:12px 0 6px;color:var(--cyan)">目前追蹤清單摘要</div>
+          <pre class="code-block" id="configPreview"></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>BIO·PULSE 生技股票分析終端 ｜ 資料來源：TWSE 臺灣證券交易所、TPEx 櫃買中心、Yahoo Finance、公開資訊觀測站轉投資揭露</span>
+    <span>⚠️ 本網站數據、轉投資比例與技術訊號僅供研究與程式分析展示，不構成任何投資建議；實際持股比例請以公開資訊觀測站最新公告為準。</span>
+  </footer>
+
+  <!-- 本機 file:// 備援資料載入，HTTP 環境會優先讀取最新 stocks.json -->
+  <script src="./data/stocks.js"></script>
+  <script src="./js/indicators.js"></script>
+  <script src="./js/charts.js"></script>
+  <script src="./js/alliance_graph.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

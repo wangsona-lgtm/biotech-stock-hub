@@ -1,0 +1,1922 @@
+{
+  "title": "BIO·PULSE 台美日生技股情與金主聯盟終端",
+  "segments": [
+    {
+      "id": "cdmo_bio",
+      "label": "台·CDMO與疫苗代工",
+      "en_label": "TW CDMO & Biologics",
+      "order": 1,
+      "description": "台灣大分子/小分子委託開發製造 (CDMO)、生物相似藥與疫苗國際代工聯盟"
+    },
+    {
+      "id": "new_drug_hub",
+      "label": "台·新藥研發艦隊",
+      "en_label": "TW New Drug R&D",
+      "order": 2,
+      "description": "具備國際 FDA/PMDA 藥證或臨床授權實力之台灣新藥研發企業"
+    },
+    {
+      "id": "specialty_api",
+      "label": "台·特殊製劑與原料藥",
+      "en_label": "TW Specialty & API",
+      "order": 3,
+      "description": "高門檻困難學名藥、原料藥 API、保健生技與通路集團轉投資代表"
+    },
+    {
+      "id": "medtech_ai",
+      "label": "台·高階醫材與醫療AI",
+      "en_label": "TW MedTech & BioAI",
+      "order": 4,
+      "description": "微創手術醫材、數位生物條碼 IVD 檢測與跨界科技巨頭入股之醫療 AI"
+    },
+    {
+      "id": "holding_vc",
+      "label": "台·生技金主母艦",
+      "en_label": "TW Biotech Holdings",
+      "order": 5,
+      "description": "孵化並轉投資多家上市櫃生技子公司之母集團、生技控股與永續型創投"
+    },
+    {
+      "id": "us_biotech",
+      "label": "美·生技指數與大廠",
+      "en_label": "US Biotech & Partners",
+      "order": 6,
+      "description": "那斯達克生技指數 (^NBI)、美國製藥巨頭與台廠眼科授權夥伴"
+    },
+    {
+      "id": "jp_pharma",
+      "label": "日·藥廠與生技指標",
+      "en_label": "JP Pharma Leaders",
+      "order": 7,
+      "description": "日本 ADC 領航藥廠、跨國製藥龍頭與抗體研發標竿企業"
+    }
+  ],
+  "stocks": [
+    {
+      "id": "6472",
+      "yahoo_symbol": "6472.TW",
+      "name": "保瑞",
+      "en_name": "Bora Pharmaceuticals",
+      "market": "TW",
+      "exchange": "TWSE",
+      "currency": "TWD",
+      "segment": "cdmo_bio",
+      "tagline": "台灣生技 CDMO 股王，併購美廠打造北美在地製造基地並轉投資泰福-KY",
+      "featured": true,
+      "news_query": "\"保瑞\" (6472 OR CDMO OR 泰福 OR 美國 OR 財報) when:21d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": true,
+        "summary": "本身為生技 CDMO 金主母艦：主要股東為保雷國際(17.53%)、瑞寶興投資(10.64%)、董座盛保熙(5.0%)及大亞創投(3.5%)；對外策略轉投資泰福-KY 持股約 30.5% 成為單一最大股東。",
+        "investors": [
+          {
+            "name": "保雷國際 / 瑞寶興投資 / 盛保熙團隊",
+            "ticker": "創辦經營團隊",
+            "listed_status": "經營核心大股東",
+            "pct": 33.17,
+            "pct_label": "保雷17.53% + 瑞寶興10.64% + 盛保熙5.0%",
+            "role": "核心經營權持股",
+            "note": "全體董監與內部人持股約33%；另有大亞創投(3.50%)"
+          }
+        ],
+        "investees": [
+          {
+            "name": "泰福-KY",
+            "ticker": "6541",
+            "pct": 30.5,
+            "note": "透過保瑞生技換股結盟，持股約30%~30.5%成最大法人股東，整合美國大分子產能"
+          }
+        ]
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "美日雙線佈局：美國收購 Upsher-Smith 與 MacroGenics Rockville 廠；日本通過 PMDA 查廠並與共和藥品等合作代工。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "Upsher-Smith (USL) / MacroGenics",
+            "coop_type": "併購設廠 + 長期 CDMO 合約",
+            "status": "已落地量產",
+            "detail": "收購美國百年藥廠 USL 取得明尼蘇達州口服固體廠，並併購 MacroGenics 馬里蘭州 Rockville 大分子廠且簽署長期 CDMO 供應合約。"
+          },
+          {
+            "country": "JP",
+            "partner": "日本共和藥品 (Kyowa) / PMDA 認證",
+            "coop_type": "委託製造 (CMO) + PMDA 查廠",
+            "status": "已認證供貨",
+            "detail": "竹南廠與美國大分子/針劑產線通過日本 PMDA 實地查核，並曾與日本共和藥品簽訂查驗登記與市售批次委託生產合作。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "雙引擎營運架構",
+        "note": "結合 CDMO 全球代工與美國 USL 特殊學名藥/品牌藥銷售通路",
+        "items": [
+          { "name": "全球銷售業務 (USL / 特殊學名藥)", "pct": 58, "desc": "美國市場品牌藥與高門檻特殊學名藥銷售" },
+          { "name": "CDMO 委託開發與製造", "pct": 42, "desc": "涵蓋北美與台灣小分子、針劑與大分子生物藥代工" }
+        ]
+      }
+    },
+    {
+      "id": "6589",
+      "yahoo_symbol": "6589.TWO",
+      "name": "台康生技",
+      "en_name": "EirGenix",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "cdmo_bio",
+      "tagline": "鴻海與台耀雙上市集團轉投資，通過日本 PMDA 查廠之生物相似藥與 CDMO 龍頭",
+      "featured": true,
+      "news_query": "\"台康生技\" (6589 OR 鴻海 OR PMDA OR Sandoz OR 財報) when:21d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "重量級上市金主加持：泛鴻海集團（鴻準 2354 + 永齡資本）私募注資 50.3 億元合計約 17.6%~18.56%，台耀化學 (4746) 持股約 6.06%。",
+        "investors": [
+          {
+            "name": "泛鴻海集團 (鴻準 2354 / 永齡資本)",
+            "ticker": "2354 / 2317",
+            "listed_status": "上市公司轉投資",
+            "pct": 18.56,
+            "pct_label": "泛鴻海約 18.56% (鴻準 8.98% + 永齡 8.65%)",
+            "role": "最大策略法人股東",
+            "note": "2021年泛鴻海私募斥資50.3億元認購5.5萬張，躍居最大股東"
+          },
+          {
+            "name": "台耀化學",
+            "ticker": "4746",
+            "listed_status": "上市公司轉投資",
+            "pct": 6.06,
+            "pct_label": "約 6.06%",
+            "role": "關鍵生技產業法人股東",
+            "note": "聯手台新藥(6838)打造 ADC 與生物藥垂直整合聯盟"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "日本 PMDA 認證商業量產供貨；美國與 Sandoz 授權乳癌生物相似藥並攜手 GeneFab 切入細胞基因治療。",
+        "partners": [
+          {
+            "country": "JP",
+            "partner": "日本 PMDA 查廠認證 & 日本藥廠長約",
+            "coop_type": "商業化生產 + 產品授權",
+            "status": "量產供貨中",
+            "detail": "汐止與竹北廠通過日本 PMDA GMP 查核，承接日本上市產品多年期供貨合約，並推動乳癌生物相似藥日本市場授權。"
+          },
+          {
+            "country": "US",
+            "partner": "Sandoz (諾華旗下) / GeneFab",
+            "coop_type": "全球授權 + 基因治療原料合作",
+            "status": "策略合作中",
+            "detail": "EG12014 授權 Sandoz 推進美歐藥證；另與美國 GeneFab 簽訂策略合作，生產 GMP 質體 DNA (pDNA) 切入美國細胞基因治療供應鏈。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "雙軌營運模式",
+        "note": "同時具備高階 CDMO 穩定現金流與生物相似藥國際授權里程碑金",
+        "items": [
+          { "name": "CDMO 生物藥開發暨代工", "pct": 75, "desc": "哺乳動物細胞與微生物發酵、針劑充填與 pDNA 代工" },
+          { "name": "生物相似藥與授權分潤", "pct": 25, "desc": "EG12014 / EG1206A 乳癌生物相似藥授權簽約金與供貨" }
+        ]
+      }
+    },
+    {
+      "id": "4726",
+      "yahoo_symbol": "4726.TWO",
+      "name": "永昕",
+      "en_name": "Mycenax",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "cdmo_bio",
+      "tagline": "晟德集團與日本 JCR 並列雙核心股東，台日合資秋田建廠並簽署多項國際 MOU",
+      "featured": true,
+      "news_query": "\"永昕\" (4726 OR JCR OR Alfresa OR 日本 OR CDMO) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "台日雙金主：上櫃母公司晟德 (4123) 持股約 20.46%，日本罕病藥廠 JCR Pharmaceuticals 策略入股約 20.48%，另有日本 Alfresa 策略投資。",
+        "investors": [
+          {
+            "name": "晟德大藥廠",
+            "ticker": "4123",
+            "listed_status": "上櫃公司轉投資",
+            "pct": 20.46,
+            "pct_label": "約 20.46%",
+            "role": "核心母集團大股東",
+            "note": "晟德集團長期培育之生物藥 CDMO 核心旗艦"
+          },
+          {
+            "name": "日本 JCR Pharmaceuticals (4552.T)",
+            "ticker": "JP 4552",
+            "listed_status": "日股上市策略入股",
+            "pct": 20.48,
+            "pct_label": "約 20.48%",
+            "role": "第一大日本策略股東",
+            "note": "2022年參與私募16.25億元，由長期大客戶升格為第一大股東"
+          },
+          {
+            "name": "日本 Alfresa Holdings (2784.T)",
+            "ticker": "JP 2784",
+            "listed_status": "日股上市策略入股",
+            "pct": null,
+            "pct_label": "策略股東 + 合資夥伴",
+            "role": "日本醫藥通路戰略股東",
+            "note": "參與投資並共同於日本秋田合資設立 Alfenax Biologics"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": true,
+        "summary": "台日生技聯盟典範！與日本 JCR、Alfresa 深度結盟並合資建廠；並與 Sartorius 簽署 MOU 推進美國 FDA 查廠。",
+        "partners": [
+          {
+            "country": "JP",
+            "partner": "JCR Pharmaceuticals / Alfresa (Alfenax)",
+            "coop_type": "策略入股 + 商業量產 + 台日合資廠",
+            "status": "深度結盟執行中",
+            "detail": "承接 JCR 上市生物藥轉廠與商業化量產；並與日本醫藥通路龍頭 Alfresa 合資成立 Alfenax Biologics 於日本秋田建置雙製造基地。"
+          },
+          {
+            "country": "US",
+            "partner": "Sartorius / 美國 FDA 查廠推進",
+            "coop_type": "策略合作 MOU + 歐美法規對接",
+            "status": "MOU 推進中",
+            "detail": "與國際製程設備大廠 Sartorius 簽署策略合作 MOU，強化一次性生物反應器與 ADC/異體細胞製程，推進竹南廠對接美國 FDA 認證。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "大D中M CDMO 服務架構",
+        "note": "日本客戶專案比重高，切入 ADC 與異體細胞治療新興平台",
+        "items": [
+          { "name": "生物藥 GMP 商業化量產 (M)", "pct": 55, "desc": "承接日本 JCR 等上市生物藥與臨床三期量產" },
+          { "name": "製程開發與 ADC/細胞技術 (D)", "pct": 45, "desc": "細胞株建立、製程放大與新世代生物藥開發" }
+        ]
+      }
+    },
+    {
+      "id": "6541",
+      "yahoo_symbol": "6541.TW",
+      "name": "泰福-KY",
+      "en_name": "Tanvex BioPharma",
+      "market": "TW",
+      "exchange": "TWSE",
+      "currency": "TWD",
+      "segment": "cdmo_bio",
+      "tagline": "保瑞與潤泰雙上市金主入股，擁有美國聖地牙哥 FDA cGMP 廠之生物相似藥/CDMO 廠",
+      "featured": false,
+      "news_query": "\"泰福\" (6541 OR 保瑞 OR 潤泰 OR FDA OR 聖地牙哥) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "雙重上市櫃金主：保瑞 (6472) 透過保瑞生技換股持有約 30%~30.5% 為最大股東；潤泰集團（潤泰全/潤泰新等）持股約 24%~25%。",
+        "investors": [
+          {
+            "name": "保瑞藥業集團",
+            "ticker": "6472",
+            "listed_status": "上市公司轉投資",
+            "pct": 30.5,
+            "pct_label": "約 30.0% ~ 30.5%",
+            "role": "單一最大法人股東",
+            "note": "保瑞董座盛保熙兼任泰福董事長，打造台美大分子 CDMO 聯軍"
+          },
+          {
+            "name": "潤泰集團 (潤泰全 2915 / 潤泰新 9945)",
+            "ticker": "2915 / 9945",
+            "listed_status": "上市集團轉投資",
+            "pct": 24.5,
+            "pct_label": "約 24% ~ 25%",
+            "role": "創始第二大法人集團",
+            "note": "長期核心創始股東，支持聖地牙哥廠與生物相似藥取證"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": false,
+        "has_mou": false,
+        "summary": "純美國製造基地優勢：加州聖地牙哥廠通過 FDA 查核，結合保瑞 USL 美國通路推動 Nypozi 等生物相似藥銷售與 CDMO 接單。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "美國加州聖地牙哥廠 / 保瑞 USL 通路",
+            "coop_type": "美國在地 cGMP 廠 + 通路商業化",
+            "status": "FDA 認證・商化中",
+            "detail": "聖地牙哥廠具美國 FDA 核准之商業化規模產能，受惠美國《生物安全法案》在地製造轉單效應，並透過保瑞 USL 銷售 TX01 (Nypozi)。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "台美大分子雙引擎",
+        "note": "整合台灣竹北研發試量產與美國聖地牙哥商業量產基地",
+        "items": [
+          { "name": "生物相似藥美國商業化", "pct": null, "tag": "FDA 藥證落地", "desc": "Nypozi (TX01) 等產品美國市場銷售推進" },
+          { "name": "美國在地大分子 CDMO", "pct": null, "tag": "成長新動能", "desc": "聖地牙哥廠擴產搶攻北美生物製劑委外製造商機" }
+        ]
+      }
+    },
+    {
+      "id": "4142",
+      "yahoo_symbol": "4142.TW",
+      "name": "國光生",
+      "en_name": "Adimmune",
+      "market": "TW",
+      "exchange": "TWSE",
+      "currency": "TWD",
+      "segment": "cdmo_bio",
+      "tagline": "國發基金最大股東；與美商 BD 簽署 MOU、為賽諾菲美國代工並承接日本北里技術合作",
+      "featured": false,
+      "news_query": "\"國光生\" (4142 OR 賽諾菲 OR BD OR 疫苗 OR CDMO) when:30d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": false,
+        "summary": "國家級戰略投資：行政院國發基金持股約 11.31% 為最大單一法人股東；全體董監及大股東持股約 17%~24%。",
+        "investors": [
+          {
+            "name": "行政院國發基金",
+            "ticker": "官方戰略基金",
+            "listed_status": "政府政策基金",
+            "pct": 11.31,
+            "pct_label": "約 11.31%",
+            "role": "最大單一法人股東",
+            "note": "國家疫苗自主與防疫戰略核心持股"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": true,
+        "summary": "具備美商 BD 合作 MOU、美國 Sanofi/Protein Sciences 長期代工，及日本北里第一三共歷史技術淵源。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "BD (Becton Dickinson) / Sanofi (Protein Sciences)",
+            "coop_type": "簽署 MOU + 美國 FDA 無菌充填長約",
+            "status": "MOU 及長期代工中",
+            "detail": "與全球注射器龍頭美商 BD 簽訂 MOU 聯手進軍國際 CDMO；並長期為 Sanofi (原美商 Protein Sciences) 代工美國 Flublok 流感疫苗。"
+          },
+          {
+            "country": "JP",
+            "partner": "北里第一三共疫苗 (原北里研究所)",
+            "coop_type": "疫苗技術引進與製程合作",
+            "status": "長期技術淵源",
+            "detail": "自創設起引進日本北里技術開發日本腦炎與破傷風疫苗，並將無菌針劑充填 CDMO 業務拓展至日本市場。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "疫苗自製與國際 CDMO 雙軌",
+        "note": "潭子廠具美國 FDA 與歐盟 GMP 無菌針劑充填認證",
+        "items": [
+          { "name": "國內外季節流感/腸病毒疫苗", "pct": 55, "desc": "公費流感疫苗與東南亞/東歐外銷市場" },
+          { "name": "國際無菌針劑充填 CDMO", "pct": 45, "desc": "美國 Sanofi/Flublok 疫苗與歐美無菌充填訂單" }
+        ]
+      }
+    },
+    {
+      "id": "6446",
+      "yahoo_symbol": "6446.TW",
+      "name": "藥華藥",
+      "en_name": "PharmaEssentia",
+      "market": "TW",
+      "exchange": "TWSE",
+      "currency": "TWD",
+      "segment": "new_drug_hub",
+      "tagline": "原發性紅血球/血小板增多症新藥 Ropeg 同時獲美國 FDA 與日本 PMDA 核准，台生技市值指標",
+      "featured": true,
+      "news_query": "\"藥華藥\" (6446 OR Ropeg OR FDA OR 日本 OR 財報) when:14d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": false,
+        "summary": "國發基金 (7.22%)、耀華玻璃 (3.16%) 與閎泰投資 (3.14%) 為前三大股東；外資持股逾 21%，具備高機構法人共識。",
+        "investors": [
+          {
+            "name": "行政院國發基金 / 耀華玻璃",
+            "ticker": "官股與政策基金",
+            "listed_status": "政府與投資法人",
+            "pct": 10.38,
+            "pct_label": "國發基金 7.22% + 耀華玻璃 3.16%",
+            "role": "創始政策法人股東",
+            "note": "另有閎泰投資(3.14%)及外資機構持股約21%~22%"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "美日市場直接商業化：美國設立子公司自建銷售金三角與波多黎各廠；日本獲 PMDA 核准 PV 與 ET 全線適應症。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "美國子公司團隊 & 波多黎各製造廠",
+            "coop_type": "FDA 藥證直營商業化 + 在地設廠",
+            "status": "高速放量中",
+            "detail": "Ropeg 獲美國 FDA 核准 PV 並推進 ET 適應症；在美建立血液腫瘤直營團隊，並投資波多黎各廠強化美國在地供應鏈。"
+          },
+          {
+            "country": "JP",
+            "partner": "日本子公司 & 日本 PMDA 藥證",
+            "coop_type": "PMDA 全線核准 + 日本醫療通路合作",
+            "status": "已上市銷售中",
+            "detail": "Ropeg 獲日本厚生勞動省核准治療 PV，並進一步取得原發性血小板過多症 (ET) 全線適應症核准。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "新藥直營全球區域結構",
+        "note": "美國市場為營收成長主力引擎，日本與歐洲接續放量",
+        "items": [
+          { "name": "Ropeg (P1101) 美國市場直營", "pct": 78, "desc": "真性紅血球增多症 (PV) 滲透率持續提升" },
+          { "name": "日本 / 歐洲 / 亞太市場銷售", "pct": 22, "desc": "日本 PV/ET 適應症與歐洲夥伴 AOP 供貨" }
+        ]
+      }
+    },
+    {
+      "id": "6838",
+      "yahoo_symbol": "6838.TW",
+      "name": "台新藥",
+      "en_name": "Formosa Pharmaceuticals",
+      "market": "TW",
+      "exchange": "TWSE",
+      "currency": "TWD",
+      "segment": "new_drug_hub",
+      "tagline": "台耀化學絕對控股轉投資，併購日本技術取得 APNT 平台，眼科新藥授權美商 Harrow",
+      "featured": true,
+      "news_query": "\"台新藥\" (6838 OR 台耀 OR Harrow OR APP13007 OR 眼科) when:21d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "上市母公司絕對金主：台耀化學 (4746) 為主導創設與最大法人股東，持股約 40.66%~58.92%（依增資稀釋階段波動）。",
+        "investors": [
+          {
+            "name": "台耀化學",
+            "ticker": "4746",
+            "listed_status": "上市公司轉投資",
+            "pct": 40.66,
+            "pct_label": "約 40.66% (主導創設母公司)",
+            "role": "控股型最大法人股東",
+            "note": "聯手台康生技(6589)與台耀形成 ADC 及製劑開發鐵三角"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "日本併購技術起家 + 美國眼科授權落地：併購日本 Activus Pharma 取得 APNT 技術；美國改授權 NASDAQ 上市公司 Harrow (HROW)。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "Harrow, Inc. (NASDAQ: HROW)",
+            "coop_type": "美國獨家商業化授權",
+            "status": "FDA 獲批・授權推進",
+            "detail": "眼科術後新藥 APP13007 (BYQLOVI) 於 2025 年 6 月改授權美國眼科處方藥龍頭 Harrow，強力推進全美商業銷售。"
+          },
+          {
+            "country": "JP",
+            "partner": "Activus Pharma (日本船橋併購)",
+            "coop_type": "跨國技術併購 + 母集團日本據點",
+            "status": "核心技術平台",
+            "detail": "2017 年收購日本 Activus Pharma 取得專利 APNT 奈米微粒製劑技術平台，母公司台耀亦設有日本子公司推動合作。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "專利平台授權與新藥管線",
+        "note": "APP13007 已授權覆蓋全球逾 80 國，並聯手台耀/台康推進 ADC 生物相似藥",
+        "items": [
+          { "name": "APP13007 眼科新藥全球授權", "pct": null, "tag": "商業化主力", "desc": "美國 Harrow 及歐洲、中東、亞太授權里程碑金與權利金" },
+          { "name": "TSY-0110 ADC 抗癌新藥", "pct": null, "tag": "集團研發引擎", "desc": "結合台康抗體與台耀共軛技術開發 Kadcyla 生物相似藥" }
+        ]
+      }
+    },
+    {
+      "id": "4162",
+      "yahoo_symbol": "4162.TWO",
+      "name": "智擎",
+      "en_name": "PharmaEngine",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "new_drug_hub",
+      "tagline": "台灣東洋創設轉投資 18%，胰臟癌新藥安能得成功打入美國一線與日本養樂多銷售",
+      "featured": false,
+      "news_query": "\"智擎\" (4162 OR 東洋 OR 安能得 OR 養樂多 OR Ipsen) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "上櫃母公司 + 官方基金雙柱：創始母公司台灣東洋 (4105) 持股約 17.7%~18.0%，行政院國發基金持股約 15.5%。",
+        "investors": [
+          {
+            "name": "台灣東洋",
+            "ticker": "4105",
+            "listed_status": "上櫃公司轉投資",
+            "pct": 18.0,
+            "pct_label": "約 17.7% ~ 18.0%",
+            "role": "創始第一大法人股東",
+            "note": "由東洋內部研發團隊獨立分割成立，長期為智擎最大產業股東"
+          },
+          {
+            "name": "行政院國發基金",
+            "ticker": "官方戰略基金",
+            "listed_status": "政府政策基金",
+            "pct": 15.5,
+            "pct_label": "約 15.5%",
+            "role": "第二大法人股東",
+            "note": "台灣虛擬新藥授權商業模式成功典範"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "美日商業授權成熟收割：美國夥伴 Ipsen 取得一線胰臟癌 FDA 藥證；日本由養樂多 (Yakult Honsha) 銷售並貢獻穩定權利金。",
+        "partners": [
+          {
+            "country": "JP",
+            "partner": "日本養樂多 (Yakult Honsha)",
+            "coop_type": "日本市場獨家授權與權利金",
+            "status": "商業銷售分潤中",
+            "detail": "安能得 (ONIVYDE) 日本市場由養樂多負責商業化銷售與 PMDA 一線適應症推進，持續為智擎貢獻權利金與里程碑金。"
+          },
+          {
+            "country": "US",
+            "partner": "Ipsen (原 Merrimack 美國授權)",
+            "coop_type": "全球臨床與美國 FDA 擴展合作",
+            "status": "一線藥證核准",
+            "detail": "授權夥伴 Ipsen 成功取得美國 FDA 一線轉移性胰腺癌擴大適應症核准，推升全球授權體系價值。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "輕資產虛擬藥廠授權模式",
+        "note": "透過全球權利金與里程碑金創造高毛利現金流",
+        "items": [
+          { "name": "ONIVYDE 歐亞與日本銷售權利金", "pct": 85, "desc": "來自日本養樂多及歐亞市場之淨銷售額分潤" },
+          { "name": "台灣自營銷售與里程碑金", "pct": 15, "desc": "台灣在地醫院通路銷售及新適應症研發里程碑" }
+        ]
+      }
+    },
+    {
+      "id": "4743",
+      "yahoo_symbol": "4743.TWO",
+      "name": "合一",
+      "en_name": "Oneness Biotech",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "new_drug_hub",
+      "tagline": "中天生技母公司持股逾 21% 轉投資，傷口醫材 Bonvadis 取得美國 FDA 上市許可",
+      "featured": true,
+      "news_query": "\"合一\" (4743 OR 中天 OR Bonvadis OR FDA OR 速必一) when:21d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "上櫃母公司持股：中天生技 (4128) 為最大法人股東，持股約 21.22%；本身亦反向持有中天約 6.21%。",
+        "investors": [
+          {
+            "name": "中天生技",
+            "ticker": "4128",
+            "listed_status": "上櫃公司轉投資",
+            "pct": 21.22,
+            "pct_label": "約 21.22%",
+            "role": "母公司 / 最大法人股東",
+            "note": "鑽石投資依上市承諾出清合一持股後，中天增持至逾21%"
+          }
+        ],
+        "investees": [
+          {
+            "name": "鑽石投資",
+            "ticker": "6901",
+            "pct": 14.02,
+            "note": "中天集團共同發起生技創投，合一持有鑽石投資約14.02%"
+          }
+        ]
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": false,
+        "has_mou": false,
+        "summary": "美國商化重點推進：Bonvadis 傷口乳膏已獲美國 FDA 核准上市許可並洽談美國連鎖通路與經銷授權；曾授權抗過敏藥 FB825 予 LEO Pharma。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "美國連鎖藥局/經銷商洽談 & FDA 核准",
+            "coop_type": "FDA 上市許可 + 美國通路授權",
+            "status": "FDA 獲批・通路洽談",
+            "detail": "Bonvadis (ON101) 傷口醫材取得美國 FDA 上市許可，積極推進 HCPCS 健保編碼與美國醫療通路授權；SNS812 亦於美國推進合作。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "新藥與高階傷口照護醫材",
+        "note": "中國大陸「速必一」授權華潤雙鶴，美國主推 Bonvadis 醫材",
+        "items": [
+          { "name": "ON101 (速必一 / Bonvadis)", "pct": null, "tag": "核心商化主力", "desc": "台灣健保給付與美國 FDA 傷口護理醫材全球授權" },
+          { "name": "FB825 / SNS812 研發管線", "pct": null, "tag": "跨國授權潛力", "desc": "抗過敏與廣效核酸新藥臨床開發" }
+        ]
+      }
+    },
+    {
+      "id": "6535",
+      "yahoo_symbol": "6535.TWO",
+      "name": "順藥",
+      "en_name": "Lumosa Therapeutics",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "new_drug_hub",
+      "tagline": "晟德集團轉投資持股逾 34%，引進美國北卡大學技術進軍 in vivo CAR-T 並推進 LT3001",
+      "featured": false,
+      "news_query": "\"順藥\" (6535 OR 晟德 OR LT3001 OR CAR-T OR 美國) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "上櫃金主強力控盤：晟德大藥廠 (4123) 含玉晟管理顧問合計持股約 34.5%~36.5%，為絕對核心大股東兼法人董事長。",
+        "investors": [
+          {
+            "name": "晟德大藥廠集團",
+            "ticker": "4123",
+            "listed_status": "上櫃公司轉投資",
+            "pct": 35.5,
+            "pct_label": "約 34.5% ~ 36.5%",
+            "role": "最大控股法人股東",
+            "note": "包含晟德直接持股與子公司玉晟管理顧問，主導順藥2.0轉型"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": false,
+        "has_mou": false,
+        "summary": "美國學研技術引進：與美國北卡羅來納大學 (UNC) 合作引進 T 細胞強化技術開發體內 CAR-T；LT1001 具美日專利布局並全力衝刺中風新藥 LT3001。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "美國北卡羅來納大學 (UNC)",
+            "coop_type": "技術引進 + 前沿療法共同開發",
+            "status": "動物研究驗證中",
+            "detail": "引進美國 UNC T 細胞強化技術開發腫瘤 in vivo CAR-T；並曾獲美國 FDA 許可進行 LT1001 505(b)(2) 銜接試驗。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "新藥研發授權 (順藥 2.0)",
+        "note": "2026 年統整 LT1001 全球授權，聚焦中風新藥 LT3001 與細胞療法",
+        "items": [
+          { "name": "LT3001 急性缺血性腦中風新藥", "pct": null, "tag": "旗艦臨床管線", "desc": "推進 II/III 期臨床試驗與國際大藥廠授權洽談" },
+          { "name": "in vivo CAR-T / LT1001 授權", "pct": null, "tag": "前沿技術擴張", "desc": "美國 UNC 技術平台開發與長效止痛針授權權利金" }
+        ]
+      }
+    },
+    {
+      "id": "6712",
+      "yahoo_symbol": "6712.TWO",
+      "name": "長聖",
+      "en_name": "Ever Supreme Bio Technology",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "new_drug_hub",
+      "tagline": "中國醫體系細胞治療旗艦，成立美國合資公司持股 48.78% 涵蓋美歐日幹細胞專利授權",
+      "featured": false,
+      "news_query": "\"長聖\" (6712 OR 細胞治療 OR 外泌體 OR 合資 OR 美國) when:30d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": false,
+        "summary": "中國醫藥大學暨醫療體系（董事長蔡長海）核心生技旗艦；董監及大股東持股約 25%~26%，與長佳智能 (6841) 屬同集團醫療鐵三角。",
+        "investors": [
+          {
+            "name": "中國醫藥大學體系 / 蔡長海團隊",
+            "ticker": "體系核心創辦群",
+            "listed_status": "集團董監大股東",
+            "pct": 25.5,
+            "pct_label": "董監及大股東約 25% ~ 26%",
+            "role": "核心經營團隊",
+            "note": "與長佳智能(6841)、聖安生醫形成細胞治療與AI醫療鐵三角"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": true,
+        "summary": "北美合資授權涵蓋美歐日：以 UMSC01 美歐日專利技術作價入股美國合資公司取得 48.78% 股權並獲 300 萬美元簽約金。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "Minerva Scientifics / Axeon Research (北美 JV)",
+            "coop_type": "合資協議 (JV) + 美歐日專利授權",
+            "status": "已簽約授權執行",
+            "detail": "2024年簽署合資協議，長聖以 UMSC01 美、歐、日海外專利技術入股取得美國 JV 48.78% 股權，分攤美國 FDA 臨床費用。"
+          },
+          {
+            "country": "JP",
+            "partner": "日本專利授權與外泌體全球布局",
+            "coop_type": "海外專利覆蓋 + 授權靶區",
+            "status": "專利納入 JV 版圖",
+            "detail": "UMSC01 與併購聖展取得之外泌體 (dEV/iEV) 平台皆已取得或布局日本與美國發明專利，納入國際授權範疇。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "細胞委託製造與新藥授權",
+        "note": "特管辦法穩定獲利結合異體細胞與外泌體國際新藥",
+        "items": [
+          { "name": "特管辦法細胞委託製造 (CDMO)", "pct": 75, "desc": "DC/CIK 免疫細胞與幹細胞治療穩定貢獻獲利" },
+          { "name": "海外專利技術授權 / 新藥研發", "pct": 25, "desc": "UMSC01 北美合資簽約金與外泌體平台開發" }
+        ]
+      }
+    },
+    {
+      "id": "1795",
+      "yahoo_symbol": "1795.TW",
+      "name": "美時",
+      "en_name": "Lotus Pharmaceutical",
+      "market": "TW",
+      "exchange": "TWSE",
+      "currency": "TWD",
+      "segment": "specialty_api",
+      "tagline": "艾威群與泰國 PTT 入股，併購美國 Alvogen US 並獲日本 PMDA 抗癌血癌藥核准",
+      "featured": true,
+      "news_query": "\"美時\" (1795 OR 血癌藥 OR Alvogen OR 日本 OR 美國) when:21d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "跨國集團策略控股：美商艾威群集團 (Alvogen) 為最大法人股東，泰國國家石油公司 PTT 旗下 Innobic 持股約 6%（外資整體持股約 50%）。",
+        "investors": [
+          {
+            "name": "艾威群集團 (Alvogen Emerging Markets)",
+            "ticker": "跨國製藥集團",
+            "listed_status": "策略控股大股東",
+            "pct": 37.5,
+            "pct_label": "董監暨大股東約 37% ~ 38%",
+            "role": "最大控股集團",
+            "note": "整合美時成為全球前20大專科製藥與困難學名藥平台"
+          },
+          {
+            "name": "泰國國家石油 PTT (Innobic)",
+            "ticker": "SET: PTT",
+            "listed_status": "泰股上市集團轉投資",
+            "pct": 6.0,
+            "pct_label": "約 6%",
+            "role": "東南亞策略股東",
+            "note": "協助美時拓展東協及亞洲專科藥品版圖"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "美日腫瘤專科雙強：美國併購 Alvogen US 並與 Alvotech 合作生物相似藥；日本獲 PMDA 核准 Pomalidomide 血癌藥。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "Alvogen US / Alvotech",
+            "coop_type": "跨國併購 + 生物相似藥美國授權",
+            "status": "商業化營運中",
+            "detail": "收購 Alvogen US 掌握全美研發製造與銷售通路；並與 Alvotech 簽署協議取得重磅癌症與血友病生物相似藥美國商業化權利。"
+          },
+          {
+            "country": "JP",
+            "partner": "日本 PMDA 藥證核准與 B2B 供應",
+            "coop_type": "PMDA 核准上市 + B2B 在地行銷",
+            "status": "已取證供貨",
+            "detail": "多發性骨髓瘤血癌藥 Pomalidomide 獲日本 PMDA 藥證核准，透過台韓高規格廠房外銷日本。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "全球區域銷售結構",
+        "note": "美國市場佔比逾4成，結合韓國、台灣、日本與東南亞市場",
+        "items": [
+          { "name": "美國市場 (血癌藥與專科藥)", "pct": 45, "desc": "Lenalidomide 等高門檻學名藥與 Alvogen US 產品線" },
+          { "name": "亞洲市場 (韓/台/日/東協)", "pct": 45, "desc": "韓國減重與消費醫療及日本/東協腫瘤學名藥" },
+          { "name": "歐洲與其他 B2B 外銷", "pct": 10, "desc": "口服癌症藥外銷歐盟與全球授權夥伴" }
+        ]
+      }
+    },
+    {
+      "id": "1789",
+      "yahoo_symbol": "1789.TW",
+      "name": "神隆",
+      "en_name": "ScinoPharm Taiwan",
+      "market": "TW",
+      "exchange": "TWSE",
+      "currency": "TWD",
+      "segment": "specialty_api",
+      "tagline": "統一企業直接持股 37.94% 轉投資（集團逾 40%），通過美 FDA 零缺失查廠並設日本分公司",
+      "featured": false,
+      "news_query": "\"神隆\" (1789 OR 統一 OR FDA OR 原料藥 OR 針劑) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "食品零售龍頭跨界金主：上市龍頭統一企業 (1216) 直接持股 37.94%，加計統一國際開發 (3.63%) 等統一集團合計持股逾 41.5%。",
+        "investors": [
+          {
+            "name": "統一企業集團",
+            "ticker": "1216",
+            "listed_status": "上市公司轉投資",
+            "pct": 41.57,
+            "pct_label": "統一企業 37.94% + 統一國際開發 3.63%",
+            "role": "單一最大控股母集團",
+            "note": "統一集團派任主要董事與經營高層，長期穩健支持API與針劑垂直整合"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "美國零缺失查廠合作 Sagent 等針劑學名藥；日本辦事處升格日本分公司深耕專利到期 CDMO。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "Sagent Pharmaceuticals / 美國 FDA 零缺失認證",
+            "coop_type": "原料藥至針劑垂直整合 + 利潤分潤",
+            "status": "已取證供貨中",
+            "detail": "台南廠與常熟廠多次零缺失通過美國 FDA 查核，並與 Sagent 等美國藥廠合作抗血癌與多發性硬化症針劑學名藥。"
+          },
+          {
+            "country": "JP",
+            "partner": "神隆日本分公司 & 日本學名藥廠",
+            "coop_type": "在地分公司 + API/製劑 CDMO",
+            "status": "營運擴張中",
+            "detail": "因阿茲海默與癌症原料藥打入日本供應鏈有成，將日本辦事處正式升格為日本分公司，搶攻日本學名藥 CDMO 商機。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "原料藥 + 針劑雙軌策略",
+        "note": "由純原料藥 (API) 向上延伸至高門檻抗癌與勝肽類針劑製劑",
+        "items": [
+          { "name": "高活性與腫瘤原料藥 (API)", "pct": 70, "desc": "供應美日歐專利藥廠與學名藥廠關鍵 API" },
+          { "name": "自有針劑與代客研製 (CDMO)", "pct": 30, "desc": "美國 FDA 取證針劑產品線與跨國新藥代工" }
+        ]
+      }
+    },
+    {
+      "id": "4746",
+      "yahoo_symbol": "4746.TW",
+      "name": "台耀",
+      "en_name": "Formosa Laboratories",
+      "market": "TW",
+      "exchange": "TWSE",
+      "currency": "TWD",
+      "segment": "specialty_api",
+      "tagline": "ADC 與針劑原料藥母艦，轉投資台新藥 40.66% 與台康生技 6.06%，佈局美日據點",
+      "featured": false,
+      "news_query": "\"台耀\" (4746 OR 台新藥 OR 台康 OR ADC OR 原料藥) when:30d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": true,
+        "summary": "本身為上市轉投資金主母艦：主導創設台新藥 (6838) 持股約 40.66%，並策略入股台康生技 (6589) 持股約 6.06%，打造 ADC 一條龍聯盟。",
+        "investors": [
+          {
+            "name": "程正平創辦團隊與法人股東",
+            "ticker": "創始經營團隊",
+            "listed_status": "上市公司獨立經營",
+            "pct": null,
+            "pct_label": "經營團隊主導",
+            "role": "台字輩生技聯盟發起核心",
+            "note": "以小分子 API 與 ADC 共軛技術為核心對外轉投資佈局"
+          }
+        ],
+        "investees": [
+          {
+            "name": "台新藥",
+            "ticker": "6838",
+            "pct": 40.66,
+            "note": "主導創設之最大法人股東，整合奈米眼科與 ADC 開發"
+          },
+          {
+            "name": "台康生技",
+            "ticker": "6589",
+            "pct": 6.06,
+            "note": "策略持股台康並共同推動 ADC 抗體藥物複合體三方合作"
+          }
+        ]
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "設立美國芝加哥 SynChem 子公司及日本 Formosa Labs Japan，搶攻全球 ADC 與高階 API 市場。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "SynChem (美國芝加哥子公司) & 歐美藥廠",
+            "coop_type": "美國子公司營運 + ADC/API CDMO",
+            "status": "營運接單中",
+            "detail": "透過美國 SynChem 強化北美小分子合成與 ADC linker/payload 在地化研發對接，並通過美國 FDA 查廠供貨。"
+          },
+          {
+            "country": "JP",
+            "partner": "Formosa Laboratories Japan",
+            "coop_type": "日本子公司通路與技術合作",
+            "status": "在地深耕中",
+            "detail": "設立日本子公司推廣原料藥與製劑業務，並承接日本與歐美藥廠 ADC 生物共軛及針劑充填專案。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "原料藥 + 針劑 + ADC 三大引擎",
+        "note": "降膽固醇磷酸鹽 API 具全球領先市佔，ADC 與針劑產線高速成長",
+        "items": [
+          { "name": "醫療用原料藥 (API)", "pct": 72, "desc": "降膽固醇磷酸鹽吸收劑、維生素D衍生物等主力產品" },
+          { "name": "CDMO 與 ADC/針劑業務", "pct": 28, "desc": "美國 SynChem 與台灣針劑廠/ADC 共軛代工收入" }
+        ]
+      }
+    },
+    {
+      "id": "1760",
+      "yahoo_symbol": "1760.TW",
+      "name": "寶齡富錦",
+      "en_name": "Panion & BF Biotech",
+      "market": "TW",
+      "exchange": "TWSE",
+      "currency": "TWD",
+      "segment": "specialty_api",
+      "tagline": "腎臟新藥拿百磷成功授權日本 JT 旗下鳥居製藥與美國 Akebia，雙重收取國際權利金",
+      "featured": false,
+      "news_query": "\"寶齡富錦\" (1760 OR 拿百磷 OR 日本 OR Akebia OR 鳥居) when:30d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": false,
+        "summary": "北醫藥學校友班友投資持股 18.38% 為最大法人股東，整體董監持股約 18%~18.5%。",
+        "investors": [
+          {
+            "name": "班友投資",
+            "ticker": "創辦團隊投資公司",
+            "listed_status": "法人大股東",
+            "pct": 18.38,
+            "pct_label": "約 18.38%",
+            "role": "最大單一法人股東",
+            "note": "由北醫藥學創辦團隊組成，另有外資專戶持股約11%"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "新藥出海典型代表：日本授權 JT 集團鳥居製藥穩定貢獻權利金；美國授權 Akebia Therapeutics。",
+        "partners": [
+          {
+            "country": "JP",
+            "partner": "日本鳥居製藥 (Torii / JT 集團)",
+            "coop_type": "日本授權共同開發與銷售權利金",
+            "status": "穩定收取權利金",
+            "detail": "拿百磷 (檸檬酸鐵 Riona) 在日本由 JT 集團旗下鳥居製藥銷售，銷售滲透率高且長期穩定依約結算權利金。"
+          },
+          {
+            "country": "US",
+            "partner": "Akebia Therapeutics (NASDAQ: AKBA)",
+            "coop_type": "美國新藥授權 (Auryxia)",
+            "status": "已上市銷售",
+            "detail": "將美國市場授權予 Akebia 銷售腎臟病新藥 Auryxia，成為台灣少數成功打入美日兩大市場之自主研發新藥。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "新藥權利金 + 藥品醫美雙引擎",
+        "note": "日本與台灣拿百磷授權分潤貢獻高毛利獲利基底",
+        "items": [
+          { "name": "拿百磷新藥與國際權利金", "pct": 45, "desc": "日本鳥居製藥權利金及台灣/中國銷售與授權金" },
+          { "name": "西藥學名藥 / 醫美藥妝 / 檢測試劑", "pct": 55, "desc": "醫療院所消毒液、克寧洗劑與醫美保健產品線" }
+        ]
+      }
+    },
+    {
+      "id": "1707",
+      "yahoo_symbol": "1707.TW",
+      "name": "葡萄王",
+      "en_name": "Grape King Bio",
+      "market": "TW",
+      "exchange": "TWSE",
+      "currency": "TWD",
+      "segment": "specialty_api",
+      "tagline": "統一企業私募入股 8.0% 成最大外部金主，串聯 7-ELEVEN 與康是美打造大健康通路聯盟",
+      "featured": false,
+      "news_query": "\"葡萄王\" (1707 OR 統一 OR 益生菌 OR 康是美 OR 財報) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "零售食品巨頭入股：統一企業 (1216) 2020年底以 20.14 億元認購私募，持股 8.0% 成為最大外部策略法人股東。",
+        "investors": [
+          {
+            "name": "統一企業",
+            "ticker": "1216",
+            "listed_status": "上市公司轉投資",
+            "pct": 8.0,
+            "pct_label": "約 8.0% (私募20.14億元)",
+            "role": "最大外部策略股東",
+            "note": "結合 7-ELEVEN 與康是美通路代銷與海外東南亞/中國市場整合"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": false,
+        "has_mou": false,
+        "summary": "美國原料與國際大獎認證：專利猴頭菇等菌株獲美國 NIE 新原料獎，並透過統一集團拓展海外 ODM 業務。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "美國 NIE 新原料獎 / 國際益生菌 ODM",
+            "coop_type": "專利原料國際認證與外銷代工",
+            "status": "持續外銷拓展",
+            "detail": "專利猴頭菇原料 ErinaPrime 獲美國 NIE 健康老化首獎，結合發酵專利搶攻歐美及東南亞保健原料代工。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "三大事業體結構",
+        "note": "葡眾直銷為最大獲利金雞母，台灣與上海葡萄王代工穩健成長",
+        "items": [
+          { "name": "葡眾直銷事業", "pct": 80, "desc": "益生菌、樟芝王等高市佔率直銷保健食品" },
+          { "name": "台灣葡萄王 (品牌+代工)", "pct": 12, "desc": "康貝特能量飲透過統一通路銷售與 ODM 代工" },
+          { "name": "上海葡萄王", "pct": 8, "desc": "中國大陸保健飲品與膠囊代工服務" }
+        ]
+      }
+    },
+    {
+      "id": "6499",
+      "yahoo_symbol": "6499.TWO",
+      "name": "益安",
+      "en_name": "Medeon Biodesign",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "medtech_ai",
+      "tagline": "晟德轉投資 24.13% 之高階醫材廠，曾與日本 Terumo 聯合開發並佈局美國微創醫材",
+      "featured": false,
+      "news_query": "\"益安\" (6499 OR 晟德 OR Terumo OR Urocross OR FDA) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "上櫃母公司持股：晟德 (4123) 為創始法人股東與核心母集團，持股比例約 24.13%。",
+        "investors": [
+          {
+            "name": "晟德大藥廠",
+            "ticker": "4123",
+            "listed_status": "上櫃公司轉投資",
+            "pct": 24.13,
+            "pct_label": "約 24.13%",
+            "role": "創始最大法人股東",
+            "note": "晟德耐心資本孵育之高階微創醫材平台"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "日本與 Terumo 合作 Cross-Seal 並達成 600 萬美元和解；美國設有組裝出貨基地並推進攝護腺醫材 Urocross FDA 臨床。",
+        "partners": [
+          {
+            "country": "JP",
+            "partner": "Terumo (日本泰爾茂)",
+            "coop_type": "全球 IP 授權讓與 + 聯合開發",
+            "status": "已和解並保留彈性合作",
+            "detail": "2018年以5,000萬美元將 Cross-Seal 授權日本 Terumo 並於2023獲美國 FDA PMA；雙方終止專案後益安獲600萬美元和解金並保留未來合作空間。"
+          },
+          {
+            "country": "US",
+            "partner": "美國組裝據點 & Urocross FDA 臨床",
+            "coop_type": "美國在地製造 + 國際授權推進",
+            "status": "臨床授權洽談中",
+            "detail": "旗艦良性攝護腺肥大微創醫材 Urocross 推進美國 FDA 臨床與國際大廠授權談判，並於美國設有在地組裝出貨據點。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "高階微創醫材研發與授權模式",
+        "note": "採開發至關鍵臨床里程碑後授權國際醫材巨頭變現",
+        "items": [
+          { "name": "Urocross 攝護腺肥大微創醫材", "pct": null, "tag": "旗艦授權管線", "desc": "瞄準北美龐大門診微創市場，推進美國 FDA 取證與授權" },
+          { "name": "CDMO 醫材委託製造與授權金", "pct": null, "tag": "營收支撐", "desc": "整合美國在地醫材組裝能力與里程碑認列收入" }
+        ]
+      }
+    },
+    {
+      "id": "6733",
+      "yahoo_symbol": "6733.TWO",
+      "name": "博晟生醫",
+      "en_name": "BioGend Therapeutics",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "medtech_ai",
+      "tagline": "晟德轉投資持股 33.68%，骨生長因子 OIF 獨家授權日本藤本製藥並進行美國臨床",
+      "featured": false,
+      "news_query": "\"博晟生醫\" (6733 OR 晟德 OR 藤本製藥 OR 愛膝康 OR OIF) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "上櫃金主強力背書：晟德集團 (4123) 持股約 33.68% 為最大法人股東，全球骨科大廠 Exactech 亦曾持股約 7%。",
+        "investors": [
+          {
+            "name": "晟德大藥廠集團",
+            "ticker": "4123",
+            "listed_status": "上櫃公司轉投資",
+            "pct": 33.68,
+            "pct_label": "約 33.68%",
+            "role": "最大法人股東",
+            "note": "晟德集團核心骨科再生醫學轉投資公司"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "日本授權亮眼：OIF 骨生長因子獨家授權日本藤本製藥 (Fujimoto) 負擔日本臨床；美國同步完成一二期骨折試驗並洽談愛膝康北美授權。",
+        "partners": [
+          {
+            "country": "JP",
+            "partner": "藤本製藥 (Fujimoto Pharmaceutical)",
+            "coop_type": "日本獨家授權 (簽約金+雙位數分潤)",
+            "status": "日本三期臨床推進中",
+            "detail": "日方全額負擔 OIF 於日本之臨床與取證費用，博晟享簽約金、里程碑金及未來日本上市雙位數銷售分潤。"
+          },
+          {
+            "country": "US",
+            "partner": "美國 FDA 臨床 & 愛膝康北美授權洽談",
+            "coop_type": "美國多中心臨床 + 北美授權推進",
+            "status": "專利取得・授權洽談",
+            "detail": "OIF 完成台美同步一二期臨床；一次性軟骨修補系統「愛膝康」已獲美國發明專利並積極推進北美授權合作。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "以短支長雙引擎",
+        "note": "抗生素產品提供穩定現金流支應高階骨科再生醫材臨床",
+        "items": [
+          { "name": "高階抗生素與代理醫材銷售", "pct": 70, "desc": "穩定貢獻營業現金流與醫院通路基礎" },
+          { "name": "愛膝康 / OIF 再生醫材與授權", "pct": 30, "desc": "台灣自費手術成長與日本藤本製藥授權里程碑" }
+        ]
+      }
+    },
+    {
+      "id": "6841",
+      "yahoo_symbol": "6841.TWO",
+      "name": "長佳智能",
+      "en_name": "Ever Fortune.AI",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "medtech_ai",
+      "tagline": "AI 伺服器巨頭廣達轉投資擔任法人董事，多項醫療 AI 獲美國 FDA 上市許可",
+      "featured": false,
+      "news_query": "\"長佳智能\" (6841 OR 廣達 OR FDA OR 醫療AI OR 財報) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "科技大廠跨界轉投資：AI 伺服器龍頭廣達電腦 (2382) 持股約 2.65%~2.70% 並擔任法人董事，結合中國醫藥大學體系醫療大數據。",
+        "investors": [
+          {
+            "name": "廣達電腦",
+            "ticker": "2382",
+            "listed_status": "上市公司轉投資",
+            "pct": 2.68,
+            "pct_label": "約 2.65% ~ 2.70% (法人董事)",
+            "role": "科技戰略法人股東",
+            "note": "結合廣達 AI 伺服器硬體與雲端算力，共同推進智慧醫院軟硬體整合"
+          },
+          {
+            "name": "中國醫藥大學體系",
+            "ticker": "關聯集團",
+            "listed_status": "策略創始體系",
+            "pct": null,
+            "pct_label": "同系孵育 (與長聖 6712 同門)",
+            "role": "醫療臨床數據與場域夥伴",
+            "note": "提供龐大去識別化臨床數據進行 AI 模型訓練與驗證"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": false,
+        "has_mou": false,
+        "summary": "美國取證與雲端合作：多項醫療 AI 軟體及 EFAI PACS PRO 獲美國 FDA 上市許可，並與 Microsoft、AWS 雲端緊密合作。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "美國 FDA 許可 / Microsoft & AWS",
+            "coop_type": "FDA 醫材取證 + 雲端策略合作",
+            "status": "多項產品獲批上市",
+            "detail": "多款影像分析與生醫 AI 軟體獲美國 FDA 許可，結合美系雲端大廠架構輸出東南亞與北美智慧醫療市場。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "醫療 AI 軟體與系統授權",
+        "note": "涵蓋醫療 AI 輔助診斷、雲端醫療影像系統與大數據服務",
+        "items": [
+          { "name": "醫療人工智慧軟體授權與專案", "pct": 55, "desc": "心電圖、骨齡、腦出血等 FDA/TFDA 認證 AI 產品" },
+          { "name": "醫療大數據與雲端生醫服務", "pct": 45, "desc": "生醫數據分析平台及生成式醫療 AI 顧問系統" }
+        ]
+      }
+    },
+    {
+      "id": "6598",
+      "yahoo_symbol": "6598.TW",
+      "name": "ABC-KY",
+      "en_name": "Applied BioCode",
+      "market": "TW",
+      "exchange": "TWSE",
+      "currency": "TWD",
+      "segment": "medtech_ai",
+      "tagline": "半導體製程結合數位生物條碼，營收逾 9 成來自美國並授權愛德士 IDEXX 與 Henry Schein",
+      "featured": false,
+      "news_query": "\"ABC-KY\" OR \"瑞磁\" (6598 OR IDEXX OR 美國 OR 財報) when:30d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": false,
+        "summary": "台美創投與技術團隊持股：Maxwell Sensors/李家豪董事約 8.08%，全體內部人約 8.4%，外資機構持股約 23%~24%。",
+        "investors": [
+          {
+            "name": "Maxwell Sensors / 創辦技術團隊",
+            "ticker": "創始大股東",
+            "listed_status": "法人與內部人",
+            "pct": 8.08,
+            "pct_label": "約 8.08% (外資整體約 23%)",
+            "role": "核心技術創辦股東",
+            "note": "總部設於美國加州，運用半導體微影技術打造 BMB 數位生物條碼"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": false,
+        "has_mou": false,
+        "summary": "高度美國市場落地：授權全球寵物檢測龍頭愛德士 (IDEXX) 穩定收取權利金，並簽約 Henry Schein 與 Hardy Diagnostics 鋪貨全美醫院。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "IDEXX / Henry Schein / Hardy Diagnostics / Thermo Fisher",
+            "coop_type": "技術授權 + 全美經銷合約 + 儀器整合",
+            "status": "商業放量中",
+            "detail": "BMB 條碼授權美國 IDEXX 貢獻高毛利耗材與權利金；MDx3000 系統獲美國 FDA 許可並由 Henry Schein 與 Hardy 經銷全美。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "多元分子診斷試劑與授權",
+        "note": "90% 以上營收來自美國市場",
+        "items": [
+          { "name": "數位生物條碼 (BMB) 與授權權利金", "pct": 45, "desc": "供應愛德士 IDEXX 寵物檢測與體外診斷合作商" },
+          { "name": "多元傳染病檢測試劑與儀器", "pct": 55, "desc": "呼吸道/腸胃道 RPP 多元檢測套組於美國醫院銷售" }
+        ]
+      }
+    },
+    {
+      "id": "4123",
+      "yahoo_symbol": "4123.TWO",
+      "name": "晟德",
+      "en_name": "Center Laboratories",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "holding_vc",
+      "tagline": "生技界工業銀行！轉投資順藥 35%、博晟 33.7%、益安 24.1%、永昕 20.5%，並結盟日本大廠",
+      "featured": true,
+      "news_query": "\"晟德\" (4123 OR 順藥 OR 永昕 OR 益安 OR 博晟) when:21d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": true,
+        "summary": "台灣最代表性生技投控金主：旗下轉投資順藥(35.5%)、博晟生醫(33.68%)、益安(24.13%)、永昕(20.46%)、豐華生技(100%)及建誼生技。",
+        "investors": [
+          {
+            "name": "林榮錦總裁 / 儷榮科技 / 佳軒科技",
+            "ticker": "經營核心法人",
+            "listed_status": "集團核心控股",
+            "pct": null,
+            "pct_label": "儷榮/佳軒/歐室等核心法人",
+            "role": "生技工業銀行掌舵團隊",
+            "note": "透過玉晟管理顧問與晟德控股平台培育多檔掛牌生技獨角獸"
+          }
+        ],
+        "investees": [
+          {
+            "name": "順藥",
+            "ticker": "6535",
+            "pct": 35.5,
+            "note": "含玉晟管顧合計持股約34.5%~36.5%，主攻腦中風新藥與細胞療法"
+          },
+          {
+            "name": "博晟生醫",
+            "ticker": "6733",
+            "pct": 33.68,
+            "note": "持股約33.68%為最大股東，日本藤本製藥授權夥伴"
+          },
+          {
+            "name": "益安",
+            "ticker": "6499",
+            "pct": 24.13,
+            "note": "創始法人股東持股約24.13%，主攻高階微創醫材"
+          },
+          {
+            "name": "永昕",
+            "ticker": "4726",
+            "pct": 20.46,
+            "note": "持股約20.46%，與日本JCR並列大股東推動台日CDMO聯盟"
+          }
+        ]
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": true,
+        "summary": "集團跨國打群架：旗下建誼生技與日本 CMIC 簽署 ADC 合作 MOU、永昕引進日本 JCR/Alfresa；美國曾投資 Windtree 登板那斯達克。",
+        "partners": [
+          {
+            "country": "JP",
+            "partner": "日本 CMIC Bio (MOU) / JCR / Alfresa",
+            "coop_type": "ADC 合作 MOU + 策略入股合資",
+            "status": "多項台日聯盟執行中",
+            "detail": "子公司建誼生技與日本大型醫藥集團 CMIC 簽署 ADC 合作備忘錄 (MOU)；並促成永昕引進 JCR 與 Alfresa 建立台日製造基地。"
+          },
+          {
+            "country": "US",
+            "partner": "Windtree Therapeutics (WINT) / 集團美國據點",
+            "coop_type": "美國掛牌投資 + 醫材在地組裝",
+            "status": "跨國佈局推進",
+            "detail": "早年以玉晟生技錨定投資美商 Windtree 登上 NASDAQ，並支持旗下益安美國廠與順藥美國 UNC 技術合作。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "生技投控 + 水劑益生菌本業",
+        "note": "結合水劑藥品、100%持股豐華益生菌 ODM 現金流與轉投資資本利得",
+        "items": [
+          { "name": "水劑醫藥與豐華益生菌 ODM", "pct": 100, "desc": "台灣兒童/成人水劑龍頭與益生菌 ODM 穩定營收" },
+          { "name": "核心轉投資權益與資本平台", "pct": null, "tag": "NAV 成長核心", "desc": "持有順藥、永昕、益安、博晟、建誼等重磅生技股權" }
+        ]
+      }
+    },
+    {
+      "id": "4105",
+      "yahoo_symbol": "4105.TWO",
+      "name": "台灣東洋",
+      "en_name": "TTY Biopharm",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "holding_vc",
+      "tagline": "台灣特殊劑型藥廠龍頭，轉投資東生華 56.48% 與智擎 18%，微脂體與微球困難學名藥外銷美國",
+      "featured": false,
+      "news_query": "\"台灣東洋\" (4105 OR 智擎 OR 東生華 OR 微脂體 OR FDA) when:30d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": true,
+        "summary": "老牌生技轉投資母艦：大灣科技持股約 9.48%，外資約 23%；對外控股東生華 (8432) 56.48%，並持股創設之智擎 (4162) 18.0%。",
+        "investors": [
+          {
+            "name": "大灣科技 / 創辦與外資機構",
+            "ticker": "大灣科技 9.48%",
+            "listed_status": "法人大股東",
+            "pct": 9.48,
+            "pct_label": "大灣科技 9.48% (外資約 23%)",
+            "role": "核心法人股東",
+            "note": "治理結構穩健，具長期外資機構法人持股"
+          }
+        ],
+        "investees": [
+          {
+            "name": "東生華",
+            "ticker": "8432",
+            "pct": 56.48,
+            "note": "持股56.48%之核心子公司，聚焦心血管、慢性病與新劑型藥物"
+          },
+          {
+            "name": "智擎",
+            "ticker": "4162",
+            "pct": 18.0,
+            "note": "創始母公司持股約18.0%，胰臟癌新藥已成功進軍美日歐"
+          }
+        ]
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "困難學名藥出海：三氧化二砷獲美國 FDA 藥證並合作微球 Octreotide LAR 進軍北美；六堵廠承接歐美日微脂體 CDMO。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "國際大廠美國合作 (Octreotide LAR / 三氧化二砷)",
+            "coop_type": "FDA 藥證合作 + 困難學名藥分潤",
+            "status": "已上市與外銷放量",
+            "detail": "三氧化二砷獲美國 FDA 藥證並透過夥伴在美上市；另憑微球劑型 DDS 技術合作開發 Octreotide LAR 進軍美國。"
+          },
+          {
+            "country": "JP",
+            "partner": "歐美日大廠微脂體/微球 CDMO",
+            "coop_type": "特殊劑型 CDMO 製造服務",
+            "status": "國際認證接單",
+            "detail": "六堵廠通過高標準國際查廠，為歐美日藥廠提供微脂體 (Liposome) 與微球劑型委託研發與生產服務。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "三箭齊發產品結構",
+        "note": "涵蓋國內自製/代理癌症與抗感染藥、海外困難學名藥與 CDMO",
+        "items": [
+          { "name": "台灣癌症/抗感染/重症用藥", "pct": 68, "desc": "自製學名藥與引進之細胞流感疫苗、麻醉與腫瘤藥" },
+          { "name": "困難學名藥外銷與國際 CDMO", "pct": 32, "desc": "美國微脂體/三氧化二砷外銷與高階針劑代工" }
+        ]
+      }
+    },
+    {
+      "id": "4128",
+      "yahoo_symbol": "4128.TWO",
+      "name": "中天",
+      "en_name": "Microbio",
+      "market": "TW",
+      "exchange": "TPEx",
+      "currency": "TWD",
+      "segment": "holding_vc",
+      "tagline": "中天集團母艦：轉投資合一 21.22% 與鑽石投資 25.26%，微生態取得美國 GRAS 與日本專利",
+      "featured": false,
+      "news_query": "\"中天\" (4128 OR 合一 OR 鑽石投資 OR 療漾 OR 化療漾) when:30d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": true,
+        "summary": "新藥創投雙核金主母艦：主要股東為新耀生技(9.51%)、廣博實業(8.11%)、合一(6.21%)；核心轉投資合一 (21.22%) 與鑽石投資 (25.26%)。",
+        "investors": [
+          {
+            "name": "新耀生技 / 廣博實業 / 路孔明團隊",
+            "ticker": "集團核心法人",
+            "listed_status": "集團控股股東",
+            "pct": 17.62,
+            "pct_label": "新耀 9.51% + 廣博 8.11% + 合一 6.21%",
+            "role": "集團創辦核心",
+            "note": "集團採母子交叉持股與創投孵化雙軌並進"
+          }
+        ],
+        "investees": [
+          {
+            "name": "鑽石投資",
+            "ticker": "6901",
+            "pct": 25.26,
+            "note": "第一大單一法人股東持股約25.26%（集團與合一合計近40%）"
+          },
+          {
+            "name": "合一",
+            "ticker": "4743",
+            "pct": 21.22,
+            "note": "最大法人股東持股增至約21.22%，推進傷口醫材美國商化"
+          }
+        ]
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "微生態技術打入美日法規門檻：腸道微生態獲美國 FDA GRAS 安全認證；口服新藥 MS-20 取得日本特許廳癌症免疫併用發明專利。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "美國 FDA GRAS 認證 & 療漾臨床",
+            "coop_type": "FDA 安全認證 + 免疫併用臨床",
+            "status": "認證取得・商化推進",
+            "detail": "Symbiota 腸道微生態通過美國 FDA GRAS 安全認證並獲皮膚微生態化妝品資格；推進 MS-20 併用 PD-1 國際臨床。"
+          },
+          {
+            "country": "JP",
+            "partner": "日本特許廳發明專利 (MS-20 + PD-1)",
+            "coop_type": "日本發明專利取證",
+            "status": "專利核准",
+            "detail": "口服新藥化療漾/療漾 (MS-20) 取得日本特許廳核發與 PD-1 免疫檢查點抗體併用治療癌症之發明專利。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "以商養研雙引擎",
+        "note": "棉花田有機通路 (持股72.66%) 與保健品現金流支持新藥研發",
+        "items": [
+          { "name": "棉花田生機通路與大健康產品", "pct": 90, "desc": "有機生鮮連鎖門市與微生態營養保健品營收" },
+          { "name": "新藥與轉投資權益平台", "pct": 10, "desc": "持有合一與鑽石投資股權及 MS-20 微生態新藥開發" }
+        ]
+      }
+    },
+    {
+      "id": "6901",
+      "yahoo_symbol": "6901.TW",
+      "name": "鑽石投資",
+      "en_name": "Diamond Biofund",
+      "market": "TW",
+      "exchange": "TWSE",
+      "currency": "TWD",
+      "segment": "holding_vc",
+      "tagline": "富邦金/台新金/中天/潤泰四大上市集團聯合發起之台灣最大永續型上市生技創投",
+      "featured": false,
+      "news_query": "\"鑽石投資\" (6901 OR 富邦 OR 台新 OR 中天 OR 生技創投) when:30d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": true,
+        "summary": "台灣最豪華上市櫃金主陣容：中天(25.30%)+合一(14.02%)；富邦蔡明興/蔡明忠/富邦創投合計約29.58%；台新創投(8.53%)+台新資產(0.68%)合計9.21%；潤泰集團共同發起。",
+        "investors": [
+          {
+            "name": "中天生技 / 合一生技",
+            "ticker": "4128 / 4743",
+            "listed_status": "上櫃集團轉投資",
+            "pct": 39.32,
+            "pct_label": "中天 25.30% + 合一 14.02%",
+            "role": "第一大生技發起集團",
+            "note": "中天集團主導生技專業評估與產學技轉資源"
+          },
+          {
+            "name": "富邦金控集團 (蔡明興/蔡明忠/富邦創投)",
+            "ticker": "2881",
+            "listed_status": "上市金控集團投資",
+            "pct": 29.58,
+            "pct_label": "蔡明興12.6% + 蔡明忠12.6% + 富邦創投4.38%",
+            "role": "金融金主核心支柱",
+            "note": "提供長期資本與大型金融機構支持"
+          },
+          {
+            "name": "台新金控集團 (台新創投 / 吳東亮關聯)",
+            "ticker": "2887",
+            "listed_status": "上市金控集團投資",
+            "pct": 9.21,
+            "pct_label": "台新創投 8.53% + 台新資產 0.68% (合計 9.21%)",
+            "role": "創始金融夥伴",
+            "note": "結合台新創投與資產管理參與永續型創投"
+          },
+          {
+            "name": "潤泰集團",
+            "ticker": "2915 / 9945",
+            "listed_status": "上市傳產集團",
+            "pct": null,
+            "pct_label": "四大創始發起班底之一",
+            "role": "創始策略股東",
+            "note": "尹衍樑潤泰體系共同發起成立之生技創投平台"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": false,
+        "has_mou": false,
+        "summary": "投資歐美與台灣前沿生技新創：鎖定具備美國 FDA 臨床與跨國授權潛力之精準醫療、ADC 與基因療法標的。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "北美及跨國生技投資組合 (欣耀/醣基/永笙-KY 等)",
+            "coop_type": "生技創投扶植美國取證上市",
+            "status": "投資組合孵化中",
+            "detail": "扶植投資組合公司推進美國 FDA 三期臨床、臍帶血新藥 BLA 審查與國際藥廠授權併購退出。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "永續型生技創投模式",
+        "note": "透過持有上市櫃及未上市生技股之公允價值評價與股利/處分實現獲利",
+        "items": [
+          { "name": "生技醫療投資組合公允價值損益", "pct": null, "tag": "核心獲利來源", "desc": "聚焦台灣與國際具備全球專利之新藥、醫材及細胞療法公司" }
+        ]
+      }
+    },
+    {
+      "id": "^NBI",
+      "yahoo_symbol": "^NBI",
+      "name": "那斯達克生技指數",
+      "en_name": "NASDAQ Biotechnology Index",
+      "market": "US",
+      "exchange": "NASDAQ",
+      "currency": "USD",
+      "segment": "us_biotech",
+      "tagline": "全球生技醫療資金風向球與美國臨床創新股多空基準指標",
+      "featured": true,
+      "is_index": true,
+      "news_query": "\"NASDAQ Biotechnology\" OR \"biotech stocks\" FDA M&A when:14d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": false,
+        "summary": "市場基準指數（Benchmark Index），包含逾 200 家於那斯達克掛牌之生技與製藥企業，為台美生技估值對標基準。",
+        "investors": [],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": false,
+        "has_mou": false,
+        "summary": "美國生技股估值與併購溫度計，直接牽動台灣新藥研發股授權估值與籌資風險偏好。",
+        "partners": []
+      },
+      "revenue_mix": {
+        "basis": "指數產業權重結構",
+        "note": "涵蓋生物技術 (Biotechnology) 與製藥 (Pharmaceuticals) 兩大主軸",
+        "items": [
+          { "name": "生物技術與新藥開發 (Biotech)", "pct": 75, "desc": "Amgen、Gilead、Regeneron、Vertex 等美國生技龍頭" },
+          { "name": "專科製藥與診斷 (Pharma & Dx)", "pct": 25, "desc": "全球專科藥廠、基因定序與精準診斷企業" }
+        ]
+      }
+    },
+    {
+      "id": "LLY",
+      "yahoo_symbol": "LLY",
+      "name": "禮來 Eli Lilly",
+      "en_name": "Eli Lilly and Company",
+      "market": "US",
+      "exchange": "NYSE",
+      "currency": "USD",
+      "segment": "us_biotech",
+      "tagline": "全球製藥市值王！GLP-1 減重代謝藥與阿茲海默症新藥霸主，外溢帶動全球 CDMO 需求",
+      "featured": true,
+      "news_query": "\"Eli Lilly\" (LLY OR Mounjaro OR Zepbound OR earnings) when:14d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": false,
+        "summary": "美國百年跨國製藥巨擘 (S&P 500 核心成分股)，全球生技醫療估值與 CDMO 外包產能需求定錨者。",
+        "investors": [],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "全球 GLP-1 與多肽製造產能持續擴張並委外合作，並於美國與日本市場銷售 Mounjaro 與阿茲海默症新藥。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "美國大型製藥與多肽 CDMO 生態鏈",
+            "coop_type": "全球委外產能與併購合作",
+            "status": "持續擴張中",
+            "detail": "GLP-1 與放射配體/ADC 研發併購帶動全球 CDMO 投資熱潮，為台灣原料藥與針劑代工廠指標對標大廠。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "核心治療領域結構",
+        "note": "GLP-1 雙重腸泌素產品線 (Mounjaro / Zepbound) 為營收高速成長主力",
+        "items": [
+          { "name": "糖尿病與減重代謝 (Mounjaro/Zepbound)", "pct": 62, "desc": "全球爆款 GLP-1/GIP 受體促效劑驅動超高成長" },
+          { "name": "腫瘤學 (Verzenio 等)", "pct": 18, "desc": "乳癌標靶藥與創新腫瘤管線" },
+          { "name": "免疫與神經退化 (含阿茲海默)", "pct": 20, "desc": "自體免疫抗體與失智症新藥 Kisunla" }
+        ]
+      }
+    },
+    {
+      "id": "REGN",
+      "yahoo_symbol": "REGN",
+      "name": "再生元 Regeneron",
+      "en_name": "Regeneron Pharmaceuticals",
+      "market": "US",
+      "exchange": "NASDAQ",
+      "currency": "USD",
+      "segment": "us_biotech",
+      "tagline": "美國抗體工程技術龍頭，主打眼科 Eylea HD 與免疫神藥 Dupixent",
+      "featured": false,
+      "news_query": "\"Regeneron\" (REGN OR Eylea OR Dupixent OR FDA) when:21d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": false,
+        "summary": "美國那斯達克生技指數核心巨頭，自主基因工程鼠抗體平台 (VelocImmune) 為生物藥研發標竿。",
+        "investors": [],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "與 Sanofi 深度共同開發商業化 Dupixent（涵蓋美日歐市場），展現跨國大藥廠聯合商業化典範。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "Sanofi 全球免疫聯盟",
+            "coop_type": "全球共同開發與商業分潤",
+            "status": "商業化大獲成功",
+            "detail": "與賽諾菲共同開發銷售 Dupixent，全球年銷售突破百億美元級距。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "核心生物製劑營收",
+        "note": "Dupixent 合作利潤分潤與高劑量眼科抗體 Eylea HD 雙軸驅動",
+        "items": [
+          { "name": "Eylea / Eylea HD 眼科抗體", "pct": 45, "desc": "黃斑部病變旗艦抗體製劑" },
+          { "name": "Dupixent 聯盟分潤與 Libtayo 腫瘤", "pct": 55, "desc": "異位性皮膚炎/氣喘免疫藥物與免疫檢查點療法" }
+        ]
+      }
+    },
+    {
+      "id": "HROW",
+      "yahoo_symbol": "HROW",
+      "name": "Harrow 美國眼科夥伴",
+      "en_name": "Harrow, Inc.",
+      "market": "US",
+      "exchange": "NASDAQ",
+      "currency": "USD",
+      "segment": "us_biotech",
+      "tagline": "美國眼科處方藥領航廠，為台新藥 (6838) 眼科新藥 APP13007 美國獨家商業化合作夥伴",
+      "featured": false,
+      "news_query": "\"Harrow\" (HROW OR BYQLOVI OR APP13007 OR ophthalmic) when:30d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": false,
+        "summary": "NASDAQ 上市美國眼科製藥公司，為台廠台新藥 (6838) 美國市場關鍵授權夥伴，可即時追蹤其美國眼科通路放量動能。",
+        "investors": [],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": false,
+        "has_mou": false,
+        "summary": "2025 年 6 月與台灣台新藥 (6838) 簽署獨家授權協議，取得 APP13007 (BYQLOVI) 美國市場商業化經銷權。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "台新藥 (6838.TW) 美國授權夥伴",
+            "coop_type": "台美新藥獨家商業化授權",
+            "status": "2025.06 簽約推進中",
+            "detail": "接手 APP13007 美國銷售權，結合自身 IHEEZO、VEVYE 等眼科產品線覆蓋全美眼科手術與門診通路。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "美國眼科處方藥平台",
+        "note": "聚焦品牌眼科處方藥 (Branded Ophthalmic) 與配方藥 ImprimisRx",
+        "items": [
+          { "name": "品牌眼科處方藥 (IHEEZO/VEVYE/BYQLOVI)", "pct": 65, "desc": "高毛利美國專利眼科手術與乾眼/術後治療藥" },
+          { "name": "ImprimisRx 眼科調劑藥房", "pct": 35, "desc": "覆蓋全美眼科醫師之直營配藥平台" }
+        ]
+      }
+    },
+    {
+      "id": "4568.T",
+      "yahoo_symbol": "4568.T",
+      "name": "第一三共 Daiichi Sankyo",
+      "en_name": "Daiichi Sankyo",
+      "market": "JP",
+      "exchange": "TSE",
+      "currency": "JPY",
+      "segment": "jp_pharma",
+      "tagline": "全球 ADC 抗體藥物複合體絕對霸主 (Enhertu)，國光生日本歷史合作集團",
+      "featured": true,
+      "news_query": "\"Daiichi Sankyo\" OR \"第一三共\" (Enhertu OR ADC OR AstraZeneca) when:21d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": false,
+        "summary": "東京證交所 Prime 核心大藥廠；其日本 ADC 平台定義全球抗體偶聯藥浪潮，與台廠台耀/台康/永昕 ADC CDMO 趨勢高度連動。",
+        "investors": [],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "與 AstraZeneca、Merck (美國默沙東) 簽署數百億美元級 ADC 共同開發商業化聯盟，並與台灣國光生有北里第一三共歷史疫苗合作。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "Merck & Co. / AstraZeneca",
+            "coop_type": "全球百億美元級 ADC 共同開發聯盟",
+            "status": "全球商業放量中",
+            "detail": "DXd-ADC 平台與 AstraZeneca 聯手推出 Enhertu，並與美國默沙東簽署多款 ADC 全球合作協議。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "腫瘤 ADC 驅動轉型",
+        "note": "Enhertu 與 DXd-ADC 管線已成為推動獲利爆發的核心引擎",
+        "items": [
+          { "name": "腫瘤學與 Enhertu ADC 藥物", "pct": 45, "desc": "全球 HER2 乳癌與泛腫瘤 ADC 銷售高速成長" },
+          { "name": "心血管 Lixiana 與專科藥", "pct": 55, "desc": "抗凝血劑與日本/歐美專科製劑基礎營收" }
+        ]
+      }
+    },
+    {
+      "id": "4502.T",
+      "yahoo_symbol": "4502.T",
+      "name": "武田製藥 Takeda",
+      "en_name": "Takeda Pharmaceutical",
+      "market": "JP",
+      "exchange": "TSE",
+      "currency": "JPY",
+      "segment": "jp_pharma",
+      "tagline": "日本規模最大跨國製藥龍頭，美國營收占比逾半，聚焦罕病、腸胃與血漿療法",
+      "featured": false,
+      "news_query": "\"Takeda\" OR \"武田製藥\" (4502 OR Entyvio OR earnings) when:21d",
+      "capital_backers": {
+        "has_listed_backer": false,
+        "is_parent_investor": false,
+        "summary": "日本跨國藥業龍頭 (同時於 TSE 與 NYSE 雙重掛牌)，橫跨美日歐全球商業化與生物藥供應鏈。",
+        "investors": [],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "透過併購美國 Shire 深度扎根波士頓研發樞紐，美國市場貢獻逾 50% 營收。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "美國波士頓研發中心 / 跨國生技授權",
+            "coop_type": "美日雙總部研發與併購",
+            "status": "全球商業運營中",
+            "detail": "在美國波士頓設有大型研發與商業據點，涵蓋腸胃、罕見疾病、血漿衍生療法與腫瘤領域。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "五大核心治療領域",
+        "note": "腸胃藥 Entyvio 與血漿衍生療法為主要營收來源",
+        "items": [
+          { "name": "腸胃病學 (Entyvio 等)", "pct": 30, "desc": "發炎性腸道疾病全球暢銷生物製劑" },
+          { "name": "罕見疾病與血漿衍生療法", "pct": 38, "desc": "遺傳性血管水腫與免疫球蛋白製劑" },
+          { "name": "神經科學與腫瘤學", "pct": 32, "desc": "ADHD 用藥與血液腫瘤專科新藥" }
+        ]
+      }
+    },
+    {
+      "id": "4519.T",
+      "yahoo_symbol": "4519.T",
+      "name": "中外製藥 Chugai",
+      "en_name": "Chugai Pharmaceutical",
+      "market": "JP",
+      "exchange": "TSE",
+      "currency": "JPY",
+      "segment": "jp_pharma",
+      "tagline": "羅氏集團 (Roche) 控股約 60% 之日本創新抗體藥廠，雙特異性與循環抗體技術全球頂尖",
+      "featured": false,
+      "news_query": "\"Chugai Pharmaceutical\" OR \"中外製藥\" (Hemlibra OR Roche OR antibody) when:21d",
+      "capital_backers": {
+        "has_listed_backer": true,
+        "is_parent_investor": false,
+        "summary": "跨國大藥廠轉投資典範：瑞士羅氏集團 (Roche) 持股約 60% 控股，為台廠研究「大廠轉投資＋獨立上市＋技術授權」之標竿模型。",
+        "investors": [
+          {
+            "name": "瑞士羅氏集團 (Roche Holding)",
+            "ticker": "ROG.SW",
+            "listed_status": "歐洲跨國藥廠控股",
+            "pct": 59.9,
+            "pct_label": "約 59.9% (策略控股母公司)",
+            "role": "控股母公司與全球授權夥伴",
+            "note": "保留中外製藥於東京證交所獨立上市並全面對接羅氏全球商業網"
+          }
+        ],
+        "investees": []
+      },
+      "intl_coop": {
+        "has_us": true,
+        "has_jp": true,
+        "has_mou": false,
+        "summary": "透過母公司羅氏/Genentech 在美國商業化血友病雙抗 Hemlibra，並持續將專利抗體與中分子胜肽技術授權歐美大廠。",
+        "partners": [
+          {
+            "country": "US",
+            "partner": "Roche / Genentech (美國)",
+            "coop_type": "母子公司全球授權與共同開發",
+            "status": "全球重磅銷售中",
+            "detail": "自行研發之 A 型血友病雙特異性抗體 Hemlibra 透過羅氏/Genentech 於美國與全球銷售，貢獻龐大權利金與毛利。"
+          }
+        ]
+      },
+      "revenue_mix": {
+        "basis": "自研抗體輸出與日本銷售",
+        "note": "高毛利海外授權與羅氏集團供貨推升營業利益率居日本藥廠之冠",
+        "items": [
+          { "name": "自研創新抗體 (Hemlibra/Actemra 等)", "pct": 65, "desc": "對羅氏集團供貨與全球銷售權利金收入" },
+          { "name": "日本國內腫瘤與專科處方藥", "pct": 35, "desc": "羅氏引進新藥與自研藥於日本市場銷售" }
+        ]
+      }
+    }
+  ]
+}
